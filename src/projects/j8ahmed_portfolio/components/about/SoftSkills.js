@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react'
-import { load_page_anim } from '../../assets/animations'
+import React from 'react'
+// import canvas_thumbnail from '../../assets/images/youtube_thumbnails/color-particle-animation-thumbnail.jpeg'
 
-const Soft_skills = ({change_section}) => {
-
-    useEffect(() => {
-        load_page_anim()    
-    }, [])
+const Soft_skills = ({change_section, section_links}) => {
 
     return (
-        <main className="site_content_container">
+        <React.Fragment>
+        <div className="soft_skills_container">
             <h2 className="about_section_heading">Soft Skills</h2>
-
+ 
             <div className="soft_skills_info_container">
-                <div className="soft_skills_img_container">
-                    {/* <img src="" alt=""/> */}
-                </div>
-                <div className="soft_skills_text_container">
-                    <p className="soft_skills_paragraph">I'm more than just a Software Developer. I'm a former teacher, Boys & Girls Club Leader, Sales Rep, and an avid sports fan.</p>
-                    <p className="soft_skills_paragraph">As a result, I'm highly focused on customer service and providing a convenient experience for all my clients. I'm also known to tell a good joke every once in a while... ;)</p>
+                <div className="about_text_container">
+                    <p className="soft_skills_paragraph">I'm more than just a Software Developer. I'm a former teacher, Boys &amp; Girls Club Leader, Sales Rep, and an avid sports fan.</p>
+                    <p className="soft_skills_paragraph">As a result, I'm highly focused on customer service and being a well-rounded team member. I'm also known to tell a good joke every once in a while... ;)</p>
                     <p className="soft_skills_paragraph">I believe in value driven solutions and effective communication amongst team members. I pride myself on my ability to manage conflict and work as a member of a team. I believe that our most unhappy customers are our greatest source of learning.</p>
+                    <p className="soft_skills_paragraph">When I'm not coding, I'm usually working on designing graphics, 3D models, or learning something new (I'm really into A.I. and Machine Learning Models right now). I'm also currently working on improving my YouTube Channel where I code through projects to help myself as well as others.</p>
+                </div>
+                <div className="soft_skills_img_container">
+                    <iframe className="youtube_video" src="https://www.youtube.com/embed/2HYfgzGWPhU" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                 </div>
             </div>
 
-            <div className="about_section_btns_container">
-                <button className="section_btn" onClick={()=> change_section("")}>Summary</button>
-                <button className="section_btn" onClick={()=> change_section("values")}>Key Values</button>
-                <button className="section_btn" onClick={()=> change_section("tech_skills")}>Tech Skills</button>
-                <button className="section_btn" onClick={()=> change_section("soft_skills")}>Soft Skills</button>
+            <div className="cta_btns_container">
+                {section_links.map((section_link, i) => {
+                    return (
+                        <button key={i} className="cta_btn section_btn" onClick={()=> change_section(section_link)}>{section_link}</button>
+                    )
+                })}
             </div>
-        </main>
+        </div>
+        </React.Fragment>
     )
 }
 

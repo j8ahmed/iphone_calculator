@@ -1,16 +1,23 @@
-import "../css/header.css"
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { default_menu_links } from '../assets/defaults'
 const desktop_view_min_width = 800
+// const {log} = console
 
-const {log} = console
 const Header = () => {
     const [ showLinks, setShowLinks ] = useState(false)
     const header = useRef(null)
     const mobile_menu_container = useRef(null)
     const init = useRef(false)
 
+    
+    const handle_header_resize = useCallback( () => {
+        if(window.innerWidth > 800){
+            header.current.style.height = `auto`
+            window.removeEventListener('resize', handle_header_resize)
+        }
+    },[])
+    
     const set_header_height = useCallback( () => {
     
         if(window.innerWidth < desktop_view_min_width){
@@ -20,24 +27,17 @@ const Header = () => {
         } else {
             header.current.style.height = `auto`
         }
-    }, [])
-
-    const handle_header_resize = () => {
-        if(window.innerWidth > 800){
-            header.current.style.height = `auto`
-            window.removeEventListener('resize', handle_header_resize)
-        }
-    }
+    }, [handle_header_resize])
 
     useEffect(() => {
         if(window.innerWidth < desktop_view_min_width){
             window.addEventListener('resize', handle_header_resize)
         }
-    }, [])  
+    }, [handle_header_resize])  
 
     useEffect(() => {
         set_header_height()
-    }, [showLinks])
+    }, [showLinks, set_header_height])
 
     useEffect(() => {
         init.current = true
@@ -55,7 +55,7 @@ const Header = () => {
                             {default_menu_links.map( (link, i) => {
                                 return(
                                     <li key={i} className="site_header_navbar_link_item">
-                                        <Link to={link === "home" ? "/" : `/${link}`}>
+                                        <Link className="site_link" to={link === "home" ? "/" : `/${link}`}>
                                         {link}
                                         </Link>
                                     </li>
@@ -91,7 +91,7 @@ const Header = () => {
                                 {default_menu_links.map( (link, i) => {
                                     return(
                                         <li key={i} className="mobile_menu_link_item">
-                                            <Link to={link === "home" ? "/" : `/${link}`}>
+                                            <Link className="site_link" to={link === "home" ? "/" : `/${link}`}>
                                             {link}
                                             </Link>
                                         </li>

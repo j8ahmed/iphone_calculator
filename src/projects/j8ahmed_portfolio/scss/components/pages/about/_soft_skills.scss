@@ -1,0 +1,51 @@
+/* about page soft skills section styles */
+
+$video_min_width:       270px;
+$video_min_height:      calc( 270px / 2 ) ;
+
+@function iframe_max_width($width){
+    @return $width - ( 2 * 16px);
+}
+
+@function iframe_height($width){
+    @return ( $width / 2 );
+}
+.soft_skills_info_container{
+    display: grid;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    padding: 0rem;
+}
+.soft_skills_img_container{
+    margin: 4rem 0;
+
+    iframe{
+        min-width: $video_min_width;
+        min-height:  $video_min_height;
+        width: 90vw;
+        height: iframe_height(90vw);
+        max-width: iframe_max_width($max_width);
+        max-height: 500px;
+        box-shadow: $shadow_light;
+    }
+}
+
+
+
+
+
+
+
+// @include media_small{
+//     .soft_skills_img_container{
+//         margin: 4rem 0;
+//     }
+//     .soft_skills_img_container iframe{
+//         min-width: $video_min_width;
+//         min-height:  $video_min_height;
+//         width: 300px;
+//         height: calc( 300px / 2 );
+//         max-width: calc( $max_width - 4rem );
+//         max-height: 500px;
+//     }
+// }

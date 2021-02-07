@@ -20,7 +20,7 @@ const Portfolio_navigation = ({category_list, get_filtered_projects}) => {
                 }}
                 >
                     <div className="search_bar_form_elem_container">
-                        <label htmlFor="search" className="search_label">Search for specific projects:</label>
+                        <label htmlFor="search" className="search_label site_page_subheading">Search Using Keywords:</label>
                         <input ref={search} tabIndex="1" name="search" type="search" placeholder="React I Phone Calculator" className="search_bar_input" 
                         onChange={ (e) => get_filtered_projects(e.target.value)}
                         />
@@ -40,7 +40,7 @@ const Portfolio_navigation = ({category_list, get_filtered_projects}) => {
                                 <li 
                                 key={i}
                                 className="portfolio_category_item"
-                                onClick={()=>{search(category)}} 
+                                onClick={()=>{get_filtered_projects(category)}} 
                                 >{category}</li>
                             )
                         })}

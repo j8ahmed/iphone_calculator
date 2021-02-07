@@ -2,7 +2,7 @@ const {innerWidth, innerHeight} = window;
 const {random, abs, PI, floor, cos, sin} = Math;
 let winHeight, svg, ctx, particles, particleNum, particleR, particleSpeed, particleLife;
 function rand(min, max = 0, neg = false){
-    if(!max) max = min, min = 0
+    if(!max) max = min; min = 0
     if(neg) return ( (random() - 0.5) * (max-min) + min )
     else return ( random() * (max-min) + min )
 }
@@ -55,7 +55,7 @@ function Particle(x,y,r,dx,dy,l,h){
 }
 
 
-window.onload = function(){
+export const start_particle_anim = () => {
     svg = document.getElementById('svg8');
     let clouds = document.querySelectorAll('g');
     let duration = 15 * clouds.length + 10;
@@ -131,5 +131,5 @@ function animate(){
     requestAnimationFrame(animate);
 }
 
-addEventListener('resize', resize);
-addEventListener('orientationchange', resize);
+window.addEventListener('resize', resize);
+window.addEventListener('orientationchange', resize);

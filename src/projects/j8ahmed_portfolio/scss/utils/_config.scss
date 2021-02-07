@@ -1,0 +1,45 @@
+// colors
+$primary:           rgb(38, 109, 211);
+$secondary:         rgb(72, 169, 166);
+$tertiary:          rgb(228, 223, 218);
+$quaternary:        rgb(242, 232, 99);
+$quinary:           rgb(251, 34, 44);
+
+
+$text:              rgb(255,255,255);
+$heading:             $text;
+$accent:              $quaternary;
+$link:                $tertiary;
+$link_hover:        rgb(0,0,0);
+$theme_bg_gradient:   linear-gradient(45deg, $primary, $secondary, $primary);
+
+
+
+// $link_hover_bg:;
+$menu_btn_bar:      rgb(255,255,255);
+$menu_bg:             $secondary;
+
+
+$shadow: 0 0 10px 5px rgba(0,0,0,0.2);
+$shadow_light: 0 0 10px 2px rgba(0,0,0,0.1);
+
+$max_width: 1000px;
+$desktop_min_width: 800px;
+
+// font sizes
+$heading_font_size:         3em;
+$sub_heading_font_size:     2em;
+$paragraph_font_size:       2em;
+
+
+
+// mixins
+
+@mixin center_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

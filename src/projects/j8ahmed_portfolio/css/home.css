@@ -8,8 +8,8 @@
 }
 .hero_image_container{
     margin: 2rem 0;
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    
     border-radius: 100%;
     border: 10px solid white;
     background: var(--primary);
@@ -62,11 +62,8 @@
 .hero_text_cta_btns_container{
     margin: 2rem auto;
     max-width: 500px;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(3, 100px);
+    display: flex;
     justify-content: space-between;
-    justify-items: center;
 }
 .hero_cta_btn:before{
     position: absolute;
@@ -103,22 +100,11 @@
 
 
 @media( max-width: 340px ){
+    .home_page_container{
+        /* padding: */
+    }
     .hero_text_main_info{
         font-size: 3em;
-    }
-    .hero_image_container{
-        margin: 2rem 0;
-        width: 260px;
-        height: 260px;
-    }
-    .hero_text_cta_btns_container{
-        margin: 2rem auto;
-        max-width: 300px;
-        display: grid;
-        grid-gap: 0.25rem;
-        grid-template-columns: repeat(3, 80px);
-        justify-content: space-between;
-        justify-items: center;
     }
     .hero_cta_btn:before{
         width: 80px;
@@ -130,16 +116,17 @@
     }
 }
 
-@media( max-width: 280px ){
+@media( max-width: 360px ){
+    .home_page_container{
+        /* padding: 0; */
+    }
     .hero_text_main_info{
         font-size: 3em;
     }
-    .hero_image_container{
-        margin: 2rem 0;
-        width: 200px;
-        height: 200px;
+    .hero_text_sub_info{
+        font-size: 1.5em;
     }
-    .hero_text_cta_btns_container{
+    /* .hero_text_cta_btns_container{
         margin: 2rem auto;
         max-width: 270px;
         display: grid;
@@ -147,7 +134,7 @@
         grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
         justify-content: space-between;
         justify-items: center;
-    }
+    } */
     .hero_cta_btn:before{
         width: 70px;
         height: 70px;
@@ -208,27 +195,6 @@
         text-align: right;
         font-style: italic;
         color: white;
-    }
-    .hero_text_cta_btns_container{
-        max-width: 500px;
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(3, 100px);
-        justify-content: space-between;
-        justify-items: center;
-    }
-    .hero_cta_btn{
-        width: 100px;
-        height: 100px;
-        padding: 2rem;
-        background: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .hero_cta_btn a{
-        text-decoration: none;
     }
 }
 

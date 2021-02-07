@@ -4,8 +4,9 @@
     --tertiary: rgb(228, 223, 218);
     --quaternary: rgb(242, 232, 99);
     --quinary: rgb(251, 34, 44);
-    --text:rgb(50,50,50);
-    --accent:rgb(228, 223, 218);
+    --text:rgb(255,255,255);
+    --heading: var(--text);
+    --accent: var(--quaternary);
     --link: var(--tertiary);
     --link_hover: black;
     --link_hover_bg:;
@@ -14,6 +15,9 @@
     --shadow: 0 0 10px 5px rgba(0,0,0,0.2);
     --max_width: 1000px;
     --desktop_min_width: 800px;
+    --heading_font_size: 4em;
+    --sub_heading_font_size: 3em;
+    --paragraph_font_size: 2em;
 }
 *{
     box-sizing: border-box;
@@ -23,12 +27,10 @@ a{
     color: var(--link);
     transition: 0.25s color;
 }
-a:hover{
+a:hover{ 
     color: var(--link_hover);
-}
-button:hover{
-    cursor: pointer;
-}
+ }
+button:hover{ cursor: pointer; }
 html{
     padding: 0;
     margin: 0;
@@ -51,11 +53,103 @@ body{
 }
 .site_content_container{
     visibility: hidden;
+    position: relative;
     margin: 0 auto;
     margin-top:100px;
-    min-height: 75vh;
+    min-height: 70vh;
     max-width: var(--max_width)
 }
+
+
+.cta_btns_container{
+    margin: 2rem auto;
+    /* max-width: 500px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cta_btn:before{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    content: "";
+    width: 100px;
+    height: 100px;
+    transform-origin: center;
+    background-size: 100%;
+    background-image: url(../assets/images/icons/button_circle_bg.svg);
+    animation: rotate 10s linear infinite;
+}
+.cta_btn:hover{
+    color: black;
+    transform: scale(1.1);
+}
+.cta_btn{
+    color: white;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    padding: 2rem;
+    margin: 1rem;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s transform, 0.25s color;
+}
+.cta_btn a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/* MEDIA QUERIES */
+@media( max-width: 340px ){
+    .site_content_container{
+        /* padding: 1re */
+    }
+    .cta_btns_container{
+        max-width: 300px;
+        justify-content: center;
+    }
+    .cta_btn:before{
+        width: 80px;
+        height: 80px;
+    }
+    .cta_btn{
+        width: 80px;
+        height: 80px;
+        margin:0.5rem;
+    }
+}
+
+@media( max-width: 280px ){
+    .cta_btns_container{
+        max-width: 270px;
+        grid-gap: 0.25rem;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+
+    }
+    .cta_btn:before{
+        width: 70px;
+        height: 70px;
+    }
+    .cta_btn{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media( min-width: 800px ){
+    .site_content_container{
+        margin-top:0;
+    }
+}
+
 
 
 

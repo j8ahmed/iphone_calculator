@@ -1,24 +1,25 @@
-import React, { useEffect } from 'react'
-import { load_page_anim } from '../../assets/animations'
+import React from 'react'
 
-const Index = ({change_section}) => {
+const Index = ({change_section, section_links}) => {
 
-    useEffect(() => {
-        load_page_anim()
-    }, [])
-    
     return (
-        <main className="site_content_container">
-            <h2 className="about_section_heading">Jamal <span className="site_accent_text">'J8'</span> in a Nutshell</h2>
-            <p className="site_paragraph">
-            I'm a team player, a self-starter, a learner, and a goal-focused worker. I combine my soft skills with my technical experience to provide clients with purposeful software solutions that provide high value to their businesses.</p>
-            <p className="site_paragraph">I love coding but beyond anything else I enjoy solving problems. </p>
-            <div className="about_section_btns_container">
-                <button className="section_btn" onClick={()=> change_section("values")}>Key Values</button>
-                <button className="section_btn" onClick={()=> change_section("tech_skills")}>Tech Skills</button>
-                <button className="section_btn" onClick={()=> change_section("soft_skills")}>Soft Skills</button>
+        <React.Fragment>
+            <div className="summary_container">
+                <div className="about_text_container">
+                    <h2 className="about_section_heading">Let Me Tell You<br/>About Myself</h2>
+                    <p className="site_paragraph">
+                    I'm a team player, a self-starter, a learner, and a goal-focused worker. I combine my soft skills with my technical experience to provide clients with purposeful software solutions. I have over <span className="site_accent_text">3 years</span> of experience in Tech - preceded by my work in the Health &amp; Fitness industry.</p>
+                    <p className="site_paragraph">I love coding but beyond anything else I enjoy solving problems. </p>
+                </div>
+                <div className="cta_btns_container summary_menu_container">
+                {section_links.map((section_link, i) => {
+                    return (
+                        <button key={i} className="cta_btn section_btn" onClick={()=> change_section(section_link)}>{section_link}</button>
+                    )
+                })}
+                </div>
             </div>
-        </main>
+        </React.Fragment>
     )
 }
 

@@ -1,34 +1,71 @@
-import "../css/about.css"
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import Index from '../components/about'
 import Values from '../components/about/Values'
 import SoftSkills from '../components/about/SoftSkills'
 import TechSkills from '../components/about/TechSkills'
+import { load_page_anim, fade_page_out_anim } from '../assets/animations'
 // import { useGlobalContext } from '../components/AppProvider'
 // const {log} = console
 
 const About_page = () => {
-    const [ section, setSection] = useState("")
+    const sections_list = ["summary", "values", "tech skills", "soft skills"]
+    const [ section, setSection] = useState(localStorage.getItem("about_section"))
     // const { isLoading, load_page } = useGlobalContext()
 
     const change_section = useCallback( (section) => {
-        setSection(section)
-    } )
+        const tl = fade_page_out_anim()
+        tl.add( () => {
+            window.scrollTo(0,0)
+            setSection(section)
+        }, ">0.1")
+    },[])
 
+    const props = useMemo( ()=> {
+        return {
+            change_section,
+            section_links: sections_list.filter( (section_name) => section_name !== section )
+        }
+    }, [section])
+
+    useEffect(() => {
+        localStorage.setItem("about_section", section)
+        load_page_anim()
+    }, [section])
+
+    useEffect(() => {
+        
+    }, [section])
+    
+    let current_section
     switch(section){
-
         case "values":
-            return <Values  change_section={change_section}/>
+            current_section = <Values  {...props} />
+            break;
 
-        case "tech_skills":
-            return <TechSkills  change_section={change_section}/>
+        case "tech skills":
+            current_section = <TechSkills  {...props} />
+            break;
 
-        case "soft_skills":
-            return <SoftSkills  change_section={change_section}/>
+        case "soft skills":
+            current_section = <SoftSkills  {...props} />
+            break;
+
+        case "summary":
+            current_section = <Index {...props} />
+            break;
 
         default:
-            return <Index change_section={change_section}/>
+            current_section = <Index {...props} />
+            break;
     }
+
+    return (
+        <main className="site_content_container">
+            <div className="about_content_container">
+                {current_section}
+            </div>
+        </main>
+    )
 }
 
 export default About_page

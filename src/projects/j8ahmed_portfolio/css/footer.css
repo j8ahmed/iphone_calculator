@@ -33,3 +33,9 @@
     padding: 0.5rem 1rem;
     text-align: left;
 }
+
+@media( max-width: 340px){
+    .site_footer_container{
+        /* padding: 0; */
+    }
+}

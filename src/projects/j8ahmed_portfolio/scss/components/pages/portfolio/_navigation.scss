@@ -1,0 +1,62 @@
+/*
+Portfolio page styles
+-> Navigation component styles
+*/
+
+.portfolio_navigation_container{
+    
+}
+.portfolio_navigation_search_container{
+    margin: 1rem;
+    margin-top: 2rem;
+}
+.search_bar_form{
+    
+}
+.search_bar_form_elem_container{
+    display: grid;
+    grid-gap: 1rem;
+}
+.search_label{
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    color: $text;
+}
+.search_bar_input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1em;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: $shadow_light;
+}
+.portfolio_navigation_categories_container{
+    margin: 2rem 0;
+}
+.portfolio_navigation_categories{
+
+}
+.portfolio_navigation_categories_list{
+    list-style: none;
+    @include center_content;
+    flex-flow: row wrap;
+}
+.portfolio_category_item{
+    cursor: pointer;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 170px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $text;
+    background: rgba($primary, 0.8);
+    box-shadow: $shadow_light;
+    border-radius: 0.25rem;
+    transition: 0.25s background;
+
+    &:hover{
+        background: $quaternary;
+        color: $link_hover;
+    }
+}

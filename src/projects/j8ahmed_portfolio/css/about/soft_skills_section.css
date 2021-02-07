@@ -1,0 +1,80 @@
+:root{
+    --video_min_width: 270px;
+    --video_min_height: calc( 270px / 2 ) ;
+    --p_size: 1.7em;
+}
+.site_content_container{
+
+}
+
+.about_section_heading{
+
+}
+.soft_skills_info_container{
+    display: grid;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    padding: 0rem;
+}
+.soft_skills_img_container{
+    margin: 4rem 0;
+}
+.soft_skills_img_container iframe{
+    min-width: var(--video_min_width);
+    min-height:  var(--video_min_height);
+    width: 90vw;
+    height: calc( 90vw / 2 );
+    max-width: calc( var(--max_width) - 4rem );
+    max-height: 500px;
+}
+.soft_skills_text_container{
+    text-align: left;
+    font-size: var(--p_size);
+    color: var(--tertiary);
+}
+.soft_skills_paragraph{
+
+}
+.soft_skills_paragraph{
+
+}
+.soft_skills_paragraph{
+
+}
+.soft_skills_paragraph{
+
+}
+.youtube_video{
+
+}
+.cta_btns_container{
+
+}
+
+
+@media(max-width: 400px){
+    .soft_skills_img_container{
+        margin: 4rem 0;
+    }
+    .soft_skills_img_container iframe{
+        min-width: var(--video_min_width);
+        min-height:  var(--video_min_height);
+        width: 300px;
+        height: calc( 300px / 2 );
+        max-width: calc( var(--max_width) - 4rem );
+        max-height: 500px;
+    }
+}
+@media(min-width: 800px){
+    .site_content_container{}
+    .about_section_heading{}
+    /* .soft_skills_info_container{} */
+    .soft_skills_img_container{}
+    .soft_skills_text_container{}
+    .soft_skills_paragraph{}
+    .soft_skills_paragraph{}
+    .soft_skills_paragraph{}
+    .soft_skills_paragraph   {}
+    .youtube_video{}
+    .cta_btns_container{}
+}

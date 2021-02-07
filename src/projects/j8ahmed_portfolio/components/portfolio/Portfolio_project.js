@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Portfolio_project = ({ id, name, category }) => {
     return (
-        <React.Fragment>
+        <div className="portfolio_project_item">
             <Link to={`/project${id}`}>
                 <div className="project_img_container">
                     {/* <img src={image} alt={name}/> */}
@@ -13,12 +13,12 @@ const Portfolio_project = ({ id, name, category }) => {
                 <div className="project_card_header">
                     <div className="project_name_and_category_container">
                         <h2 className="project_card_name">{name}</h2>
-                        <h3 className="project_card_category">{category}</h3>
+                        <h3 className="project_card_category">{category.join(" | ")}</h3>
                     </div>
                 </div>
                 <h4 className="project_page_link"><Link to={`/project${id}`}>Details</Link></h4>
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 

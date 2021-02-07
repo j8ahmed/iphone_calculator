@@ -1,5 +1,6 @@
 .site_header{
     position: absolute;
+    z-index: 99;
     width: 100%;
     margin-bottom: 5rem;
     overflow-x: hidden;
@@ -89,6 +90,7 @@
 }
 .show_mobile_menu_container{
     left: 0;
+    box-shadow: var(--shadow);
 }
 .mobile_menu_container{
     margin: 0;
@@ -99,7 +101,6 @@
     height: auto;
     overflow-x: hidden;
     background: var(--menu_bg);
-    box-shadow: var(--shadow);
     transition: 0.25s left;
 }
 .mobile_menu{

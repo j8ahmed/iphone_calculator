@@ -1,10 +1,9 @@
-import "../css/portfolio.css"
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { data } from '../assets/page_data/portfolio/data'
 import Navigation from '../components/portfolio/Portfolio_navigation'
 import Project from '../components/portfolio/Portfolio_project'
 import { load_page_anim } from '../assets/animations'
-const {log} = console
+// const {log} = console
 
 const Portfolio_page = () => {
     const [projects, setProjects] = useState(data.projects)
@@ -57,19 +56,22 @@ const Portfolio_page = () => {
 
     return (
         <main className="site_content_container">
-            <Navigation 
-                category_list={category_list}
-                get_filtered_projects={filter_projects}
-            />
-            <div className="portfolio_projects_list_container">
-                <ul className="portfolio_projects_list">
-                    {projects.map((project) => {
-                        const { id } = project
-                        return (
-                            <Project key={id} {...project} />
-                        )
-                    })}
-                </ul>
+            <div className="portfolio_page_container">
+                <h2 className="site_page_heading">Code Projects</h2>
+                <Navigation 
+                    category_list={category_list}
+                    get_filtered_projects={filter_projects}
+                />
+                <div className="portfolio_projects_list_container">
+                    <ul className="portfolio_projects_list">
+                        {projects.map((project) => {
+                            const { id } = project
+                            return (
+                                <Project key={id} {...project} />
+                            )
+                        })}
+                    </ul>
+                </div>
             </div>
         </main>
     )

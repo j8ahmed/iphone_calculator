@@ -1,4 +1,3 @@
-import "../css/home.css"
 import React, {useEffect} from 'react'
 import profile_pic from '../assets/images/square_profile_pic.jpeg'
 import { Link } from 'react-router-dom'
@@ -18,8 +17,8 @@ const Home_page = () => {
                         <div className="hero_text_intro_container">
                             <p className="hero_text_main_info">
                                 Hi,<br/>
-                                I'm <span className="site_accent_text">Jamal</span>.<br/>
-                                A Full Stack Web Developer.
+                                I'm <span className="site_accent_text"><a href="/about">Jamal</a></span>.<br/>
+                                A Front-end Web Developer.
                             </p>
                         </div>
                     </div>
@@ -29,18 +28,18 @@ const Home_page = () => {
                 </div>
                 <div className="hero_details_container">
                 <p className="hero_text_sub_info">I work primarily with&nbsp;
-                    <span className="text_sub_info_accent"><a href="https://reactjs.org/" target="_blank">React</a></span>,&nbsp;
-                    <span className="text_sub_info_accent"><a href="https://reactnative.dev/" target="_blank">React Native</a></span>,&nbsp;
-                    <span className="text_sub_info_accent"><a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a></span>, and&nbsp;
-                    <span className="text_sub_info_accent"><a href="https://nodejs.org/en/" target="_blank">Node.js</a></span>.
+                    <span className="text_sub_info_accent"><a href="https://reactjs.org/" target="_blank" rel="noreferrer">React</a></span>,&nbsp;
+                    <span className="text_sub_info_accent"><a href="https://reactnative.dev/" target="_blank" rel="noreferrer">React Native</a></span>,&nbsp;
+                    <span className="text_sub_info_accent"><a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">TypeScript</a></span>, and&nbsp;
+                    <span className="text_sub_info_accent"><a href="https://nodejs.org/en/" target="_blank" rel="noreferrer">Node.js</a></span>.
                 </p>
-                    <div className="hero_text_cta_btns_container">
-                        <button className="hero_cta_btn">
-                            <Link to="/portfolio">View my Portfolio</Link></button>
-                        <button className="hero_cta_btn">
-                            <Link to="/about">Read my Story</Link></button>
-                        <button className="hero_cta_btn">
-                            <Link to="/contact">Contact Me Today</Link></button>
+                    <div className="cta_btns_container">
+                        <button className="cta_btn">
+                            <Link to="/portfolio">View Portfolio</Link></button>
+                        <button className="cta_btn">
+                            <Link to="/about">More Info</Link></button>
+                        <button className="cta_btn">
+                            <Link to="/contact">Contact Me</Link></button>
                     </div>
                 </div>
             </section>

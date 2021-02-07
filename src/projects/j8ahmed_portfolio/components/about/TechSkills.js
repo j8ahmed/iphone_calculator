@@ -1,6 +1,6 @@
-import React, { useMemo, useEffect } from 'react'
-import { load_page_anim } from '../../assets/animations'
-const Tech_skills = ({change_section}) => {
+import React, { useMemo } from 'react'
+
+const Tech_skills = ({change_section, section_links}) => {
     const technical_skills = useMemo( () => [
         {
             id: 1,
@@ -12,7 +12,7 @@ const Tech_skills = ({change_section}) => {
                     value: 70,
                 },
                 {
-                    name: "GreenSock Animation Platform",
+                    name: "GSAP",
                     image: "",
                     value: 70,
                 },
@@ -27,10 +27,16 @@ const Tech_skills = ({change_section}) => {
                     value: 40,
                 },
                 {
-                    name: "HTML / CSS / JavaScript (ES8+)",
+                    name: "HTML",
                     image: "",
                     value: 70,
                 },
+                {
+                    name: "Sass",
+                    image: "",
+                    value: 50,
+                },
+                
 
             ]
         },
@@ -39,7 +45,7 @@ const Tech_skills = ({change_section}) => {
             category: "Back End Web Development",
             skills: [
                 {
-                    name: "Ndoe.js",
+                    name: "Node.js",
                     image: "",
                     value: 70,
                 },
@@ -65,7 +71,7 @@ const Tech_skills = ({change_section}) => {
             category: "Additional Skills",
             skills: [
                 {
-                    name: "Customer Service / Presenting",
+                    name: "Presenting",
                     image: "",
                     value: 70,
                 },
@@ -75,12 +81,12 @@ const Tech_skills = ({change_section}) => {
                     value: 50,
                 },
                 {
-                    name: "Machine Learning / A.I.",
+                    name: "ML / A.I.",
                     image: "",
                     value: 40,
                 },
                 {
-                    name: "Photoshop / Illustrator",
+                    name: "Graphic Design",
                     image: "",
                     value: 50,
                 },
@@ -92,16 +98,13 @@ const Tech_skills = ({change_section}) => {
             ]
         },
     ], [])
-
-    useEffect(() => {
-        load_page_anim()
-    }, [])
     
     return (
-        <main className="site_content_container">
+        <React.Fragment>
+        <div className="tech_skills_container">
             <h2 className="about_section_heading">Technical Skills</h2>
 
-            <div className="technical_skills_container_list">
+            <div className="technical_skills_list_container">
                 <ul className="technical_skills_list">
                     {technical_skills.map( skill_category => {
                         const { id, category, skills } = skill_category
@@ -110,37 +113,39 @@ const Tech_skills = ({change_section}) => {
                                 <h3 className="category_item_name">{category}</h3>
                                 <div className="category_item_skills_container">
                                     <ul className="category_item_skills_list">
-                                        {skills.map( (skill, i) => {
-                                            const { name, image, value} = skill
+                                        {skills.sort( (a, b) => b.value - a.value).map( (skill, i) => {
+                                            const { name, value} = skill
                                             return (
                                                 <li key={i} className="cateogry_item_skill_item">
-                                                    <label htmlFor="">{name}</label>
-                                                    <meter 
-                                                    id={name} 
-                                                    value={value}
-                                                    min="0" 
-                                                    max="100"
-                                                    low="30"
-                                                    high="70"
-                                                    optimum="70"></meter>
+                                                    <h4 className="skill_name">{name}</h4>
+                                                    <div className="skill_bar" id={`skill_${name}`}>
+                                                        <div 
+                                                            className="skill_bar_value"
+                                                            id={`skill_value_${name}`}
+                                                            title={`${name}: ${value}%`}
+                                                            style={{width:`${value}%`}}></div>
+                                                    </div>
                                                 </li>
                                             )
                                         })}
                                     </ul>
                                 </div>
+                                <h6 className="values_caption">*Values represent relative experience and comfort with respective technologies.</h6>
                             </li>
                         )
                     } )}
                 </ul>
             </div>
 
-            <div className="about_section_btns_container">
-                <button className="section_btn" onClick={()=> change_section("")}>Summary</button>
-                <button className="section_btn" onClick={()=> change_section("values")}>Key Values</button>
-                <button className="section_btn" onClick={()=> change_section("tech_skills")}>Tech Skills</button>
-                <button className="section_btn" onClick={()=> change_section("soft_skills")}>Soft Skills</button>
+            <div className="cta_btns_container">
+                {section_links.map((section_link, i) => {
+                    return (
+                        <button key={i} className="cta_btn section_btn" onClick={()=> change_section(section_link)}>{section_link}</button>
+                    )
+                })}
             </div>
-        </main>
+        </div>
+        </React.Fragment>
     )
 }
 
