@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Portfolio_project = ({ id, name, category }) => {
+const Portfolio_project = ({ id, name, category, image, github_repo }) => {
+    const link = `/portfolio/project${id}`
     return (
         <div className="portfolio_project_item">
-            <Link to={`/project${id}`}>
+            <Link to={link}>
                 <div className="project_img_container">
-                    {/* <img src={image} alt={name}/> */}
+                    <img src={image} alt={name}/>
                 </div>
             </Link>
             <div className="project_info_container">
@@ -16,7 +17,7 @@ const Portfolio_project = ({ id, name, category }) => {
                         <h3 className="project_card_category">{category.join(" | ")}</h3>
                     </div>
                 </div>
-                <h4 className="project_page_link"><Link to={`/project${id}`}>Details</Link></h4>
+                <h4 className="project_page_link"><Link to={link}>Details</Link></h4>
             </div>
         </div>
     )

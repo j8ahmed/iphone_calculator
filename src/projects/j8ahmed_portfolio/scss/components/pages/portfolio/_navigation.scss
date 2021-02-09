@@ -28,7 +28,7 @@ Portfolio page styles
     padding: 1rem;
     font-size: 1em;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: $shadow_light;
 }
 .portfolio_navigation_categories_container{
@@ -50,7 +50,7 @@ Portfolio page styles
     font-size: 1.5em;
     font-weight: bold;
     color: $text;
-    background: rgba($primary, 0.8);
+    background: rgba($primary, 0.5);
     box-shadow: $shadow_light;
     border-radius: 0.25rem;
     transition: 0.25s background;

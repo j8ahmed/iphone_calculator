@@ -11,37 +11,37 @@ const Header = () => {
     const init = useRef(false)
 
     
-    const handle_header_resize = useCallback( () => {
-        if(window.innerWidth > 800){
-            header.current.style.height = `auto`
-            window.removeEventListener('resize', handle_header_resize)
-        }
-    },[])
+    // const handle_header_resize = useCallback( () => {
+    //     if(window.innerWidth > 800){
+    //         header.current.style.height = `auto`
+    //         window.removeEventListener('resize', handle_header_resize)
+    //     }
+    // },[])
     
-    const set_header_height = useCallback( () => {
+    // const set_header_height = useCallback( () => {
     
-        if(window.innerWidth < desktop_view_min_width){
-            const { height } = mobile_menu_container.current.getBoundingClientRect()
-            header.current.style.height = `${height}px`
-            window.addEventListener('resize', handle_header_resize)
-        } else {
-            header.current.style.height = `auto`
-        }
-    }, [handle_header_resize])
+    //     if(window.innerWidth < desktop_view_min_width){
+    //         const { height } = mobile_menu_container.current.getBoundingClientRect()
+    //         header.current.style.height = `${height}px`
+    //         window.addEventListener('resize', handle_header_resize)
+    //     } else {
+    //         header.current.style.height = `auto`
+    //     }
+    // }, [handle_header_resize])
 
-    useEffect(() => {
-        if(window.innerWidth < desktop_view_min_width){
-            window.addEventListener('resize', handle_header_resize)
-        }
-    }, [handle_header_resize])  
+    // useEffect(() => {
+    //     if(window.innerWidth < desktop_view_min_width){
+    //         window.addEventListener('resize', handle_header_resize)
+    //     }
+    // }, [handle_header_resize])  
 
-    useEffect(() => {
-        set_header_height()
-    }, [showLinks, set_header_height])
+    // useEffect(() => {
+    //     set_header_height()
+    // }, [showLinks, set_header_height])
 
-    useEffect(() => {
-        init.current = true
-    }, [])
+    // useEffect(() => {
+    //     init.current = true
+    // }, [])
 
     return (
         <header ref={header} className="site_header">

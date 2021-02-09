@@ -5,6 +5,7 @@
 
 
 /* global component imports */
+@import './components/global/loader';
 @import './components/global/header';
 @import './components/global/footer';
 @import './components/global/buttons';
@@ -14,6 +15,7 @@
 @import './pages/home/home';
 @import './pages/about/about';
 @import './pages/portfolio/portfolio';
+@import './pages/project_page/project_page';
 @import './pages/contact/contact';
 @import './pages/error/error';
 
@@ -85,6 +87,12 @@ body{
         color: $link_hover;
     }
 }
+.site_paragraph{
+    margin: 2rem 0;
+    text-align: left;
+    font-size: 2rem;
+    color: $text;
+}
 
 
 
@@ -105,10 +113,10 @@ body{
 //         margin-top:200px;
 //     }
 // }
-@include media_large{
-    .site_content_container{
-        margin-top:0;
-    }
-}
+// @include media_large{
+//     .site_content_container{
+//         margin-top:0;
+//     }
+// }
 
 

@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useRef, useMemo } from 'react'
+import { load_tech_skills_anim } from '../../assets/animations'
 
 const Tech_skills = ({change_section, section_links}) => {
     const technical_skills = useMemo( () => [
@@ -12,9 +13,14 @@ const Tech_skills = ({change_section, section_links}) => {
                     value: 70,
                 },
                 {
+                    name: "React Native",
+                    image: "",
+                    value: 50,
+                },
+                {
                     name: "GSAP",
                     image: "",
-                    value: 70,
+                    value: 60,
                 },
                 {
                     name: "Angular",
@@ -29,12 +35,22 @@ const Tech_skills = ({change_section, section_links}) => {
                 {
                     name: "HTML",
                     image: "",
-                    value: 70,
+                    value: 90,
                 },
                 {
-                    name: "Sass",
+                    name: "JavaScript",
+                    image: "",
+                    value: 90,
+                },
+                {
+                    name: "TypeScript",
                     image: "",
                     value: 50,
+                },
+                {
+                    name: " CSS / Sass",
+                    image: "",
+                    value: 90,
                 },
                 
 
@@ -52,17 +68,17 @@ const Tech_skills = ({change_section, section_links}) => {
                 {
                     name: "Python",
                     image: "",
-                    value: 70,
+                    value: 50,
                 },
                 {
                     name: "PHP",
                     image: "",
-                    value: 70,
+                    value: 60,
                 },
                 {
                     name: "WordPress",
                     image: "",
-                    value: 70,
+                    value: 60,
                 },
             ]
         },
@@ -73,7 +89,7 @@ const Tech_skills = ({change_section, section_links}) => {
                 {
                     name: "Presenting",
                     image: "",
-                    value: 70,
+                    value: 90,
                 },
                 {
                     name: "Data Science",
@@ -88,7 +104,7 @@ const Tech_skills = ({change_section, section_links}) => {
                 {
                     name: "Graphic Design",
                     image: "",
-                    value: 50,
+                    value: 70,
                 },
                 {
                     name: "Git / Linux",
@@ -98,6 +114,15 @@ const Tech_skills = ({change_section, section_links}) => {
             ]
         },
     ], [])
+
+    const values = useMemo( () => {
+        return technical_skills.map( (category) => category.skills.sort( (a, b) => b.value - a.value )).flat().map( skill => skill.value)
+        
+    },[technical_skills])
+
+    useEffect(() => {
+        load_tech_skills_anim("skill_bar_value", values)
+    }, [])
     
     return (
         <React.Fragment>
@@ -123,7 +148,8 @@ const Tech_skills = ({change_section, section_links}) => {
                                                             className="skill_bar_value"
                                                             id={`skill_value_${name}`}
                                                             title={`${name}: ${value}%`}
-                                                            style={{width:`${value}%`}}></div>
+                                                            style={{width:`${0}%`}}
+                                                            ></div>
                                                     </div>
                                                 </li>
                                             )

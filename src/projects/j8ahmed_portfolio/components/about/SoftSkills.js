@@ -16,7 +16,7 @@ const Soft_skills = ({change_section, section_links}) => {
                     <p className="soft_skills_paragraph">When I'm not coding, I'm usually working on designing graphics, 3D models, or learning something new (I'm really into A.I. and Machine Learning Models right now). I'm also currently working on improving my YouTube Channel where I code through projects to help myself as well as others.</p>
                 </div>
                 <div className="soft_skills_img_container">
-                    <iframe className="youtube_video" src="https://www.youtube.com/embed/2HYfgzGWPhU" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    <iframe className="youtube_video" title="J8ahmed YouTube Channel video" src="https://www.youtube.com/embed/2HYfgzGWPhU" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                 </div>
             </div>
 

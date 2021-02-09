@@ -27,7 +27,7 @@ const ReactRouterSetup = () => {
                 <Route exact path="/portfolio">
                     <Portfolio/>
                 </Route>
-                <Route exact path="/project:id">
+                <Route exact path="/portfolio/project:id">
                     <Project/>
                 </Route>
                 {/* <Route exact path="/blog">

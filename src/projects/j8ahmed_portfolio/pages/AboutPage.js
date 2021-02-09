@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Index from '../components/about'
 import Values from '../components/about/Values'
 import SoftSkills from '../components/about/SoftSkills'
@@ -20,12 +20,10 @@ const About_page = () => {
         }, ">0.1")
     },[])
 
-    const props = useMemo( ()=> {
-        return {
-            change_section,
-            section_links: sections_list.filter( (section_name) => section_name !== section )
-        }
-    }, [section])
+    const props = {
+        change_section,
+        section_links: sections_list.filter( (section_name) => section_name !== section )
+    }
 
     useEffect(() => {
         localStorage.setItem("about_section", section)

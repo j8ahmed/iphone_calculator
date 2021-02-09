@@ -10,8 +10,8 @@
   position: absolute;
   top: calc(50% - 32px);
   left: calc(50% - 32px);
-  width: 64px;
-  height: 64px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   perspective: 800px;
 }
@@ -27,7 +27,7 @@
 .inner.one {
   left: 0%;
   top: 0%;
-  border-bottom: 3px solid $hi-light;
+  border-bottom: 3px solid $tertiary;
   animation: rotate-one 1s linear infinite;
 }
 
@@ -35,14 +35,14 @@
   right: 0%;
   top: 0%;
   animation: rotate-two 1s linear infinite;
-  border-right: 3px solid $alt-light;
+  border-right: 3px solid $quaternary;
 }
 
 .inner.three {
   right: 0%;
   bottom: 0%;
   animation: rotate-three 1s linear infinite;
-  border-top: 3px solid $hi-light;
+  border-top: 3px solid $tertiary;
 }
 
 @keyframes rotate-one {

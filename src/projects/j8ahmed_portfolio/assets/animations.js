@@ -25,6 +25,34 @@ export const load_page_anim = (tl = gsap.timeline({autoAlpha:0})) => {
     ;
     return tl
 }
+
+//animation for reloading filtered projects on the portfolio page.
+export const load_projects_anim = (elem, tl = gsap.timeline({autoAlpha:0})) => {
+    tl
+    .fromTo(elem, {visibility:"hidden"}, {visibility:"visible"})
+    .fromTo(elem, {opacity: 0, y:50}, {opacity: 1, y:0, stagger:0.1, ease:"back"}, "<")
+    ;
+    return tl
+}
+
+
+
+
+//animation for tech skills load bars
+export const load_tech_skills_anim = (elem, values, tl = gsap.timeline({autoAlpha:0})) => {
+    const elems = document.getElementsByClassName(elem)
+    values.map( (value, i) => {
+        tl
+        .to(elems[i], {width:`${value}%`, duration: 0.5, ease:"back"}, "<0.25")
+        ;
+
+    } )
+    
+    
+    return tl
+}
+
+
 export const fade_page_out_anim = (tl = gsap.timeline()) => {
     const elem = ".site_content_container"
     tl

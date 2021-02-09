@@ -2,6 +2,7 @@
     position: absolute;
     z-index: 99;
     width: 100%;
+    height: 100%;
     margin-bottom: 5rem;
     overflow-x: hidden;
 }
@@ -75,11 +76,11 @@
     
 }
 .site_header_navbar_mobile_menu_button .btn_bar:nth-of-type(2){
-    width: calc(33px * 0.7);
+    width: 33px * 0.7;
     justify-self: flex-end;
 }
 .site_header_navbar_mobile_menu_button .btn_bar:nth-of-type(3){
-    width: calc(33px * 0.4);
+    width: 33px * 0.4;
     justify-self: flex-end;
 }
 
@@ -99,7 +100,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     overflow-x: hidden;
     background: $menu_bg;
     transition: 0.25s left;
