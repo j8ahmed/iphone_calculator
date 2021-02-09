@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useRef} from 'react'
 import { Link } from 'react-router-dom'
 import { default_menu_links } from '../assets/defaults'
-const desktop_view_min_width = 800
+import Logo from "../assets/images/icons/logo_icon.svg"
+// const desktop_view_min_width = 800
 // const {log} = console
 
 const Header = () => {
     const [ showLinks, setShowLinks ] = useState(false)
     const header = useRef(null)
     const mobile_menu_container = useRef(null)
-    const init = useRef(false)
+    // const init = useRef(false)
 
     
     // const handle_header_resize = useCallback( () => {
@@ -44,11 +45,11 @@ const Header = () => {
     // }, [])
 
     return (
-        <header ref={header} className="site_header">
+        <header ref={header} className={`site_header`}>
             <div className="site_header_navbar_container">
                 <div className="site_header_navbar">
                     <div className="site_header_navbar_logo_container">
-                        <h2>Temp Logo</h2>
+                        <img src={Logo} alt="J8ahmed logo"/>
                     </div>
                     <nav className={`site_header_navbar_links_list_container`}>
                         <ul className="site_header_navbar_links_list">
@@ -76,7 +77,7 @@ const Header = () => {
                     <div className="mobile_menu">
                         <div className="mobile_menu_header">
                             <div className="site_header_navbar_logo_container">
-                                <h2>Temp Logo</h2>
+                                <img src={Logo} alt="J8ahmed logo"/>
                             </div>
                             <div className="mobile_menu_header_mobile_menu_button_container">
                                 <button className="mobile_menu_header_mobile_menu_button" onClick={() => setShowLinks(showLinks => !showLinks)}>

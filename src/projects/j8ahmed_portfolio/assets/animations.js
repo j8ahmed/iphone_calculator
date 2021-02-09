@@ -41,7 +41,7 @@ export const load_projects_anim = (elem, tl = gsap.timeline({autoAlpha:0})) => {
 //animation for tech skills load bars
 export const load_tech_skills_anim = (elem, values, tl = gsap.timeline({autoAlpha:0})) => {
     const elems = document.getElementsByClassName(elem)
-    values.map( (value, i) => {
+    values.forEach( (value, i) => {
         tl
         .to(elems[i], {width:`${value}%`, duration: 0.5, ease:"back"}, "<0.25")
         ;

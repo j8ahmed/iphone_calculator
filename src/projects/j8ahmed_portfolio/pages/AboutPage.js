@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import Header from '../components/Header'
 import Index from '../components/about'
 import Values from '../components/about/Values'
 import SoftSkills from '../components/about/SoftSkills'
@@ -58,11 +59,14 @@ const About_page = () => {
     }
 
     return (
+        <>
+        <Header />
         <main className="site_content_container">
             <div className="about_content_container">
                 {current_section}
             </div>
         </main>
+        </>
     )
 }
 

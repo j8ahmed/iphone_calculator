@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import Header from '../components/Header'
 import { data } from '../assets/page_data/portfolio/data'
 import Navigation from '../components/portfolio/Portfolio_navigation'
 import Project from '../components/portfolio/Portfolio_project'
@@ -72,6 +73,8 @@ const Portfolio_page = () => {
 
 
     return (
+        <>
+        <Header />
         <main className="site_content_container">
             <div className="portfolio_page_container">
                 <h2 className="site_page_heading">Code Projects</h2>
@@ -96,6 +99,7 @@ const Portfolio_page = () => {
                 }
             </div>
         </main>
+        </>
     )
 }
 

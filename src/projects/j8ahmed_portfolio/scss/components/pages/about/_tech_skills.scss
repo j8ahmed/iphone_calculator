@@ -65,10 +65,11 @@ About page Styles
         position: relative;
         height: 50px;
         background: $tertiary;
+        box-shadow: $shadow;
 
         .skill_bar_value{
             height: 100%;
-            background: rgba($quinary, 0.8);
+            background: rgba($secondary, 0.8);
         }
     }
 
@@ -88,13 +89,17 @@ About page Styles
         grid-template-columns: 1fr 3fr;
         align-items: center;
         background: $primary;
-        box-shadow: $shadow_light;
+        box-shadow: $shadow;
         
         .skill_name{
             justify-self: flex-end;
             font-size: 1.5rem;
             text-align: right;
             color: $text;
+        }
+
+        .skill_bar{
+            box-shadow: none;
         }
     
     }

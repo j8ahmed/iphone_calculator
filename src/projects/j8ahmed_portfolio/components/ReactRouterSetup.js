@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Home from '../pages/HomePage'
 import About from '../pages/AboutPage'
@@ -14,8 +13,6 @@ import Error from '../pages/ErrorPage'
 const ReactRouterSetup = () => {
     return (
         <Router>
-            
-            <Header />
 
             <Switch>
                 <Route exact path="/">

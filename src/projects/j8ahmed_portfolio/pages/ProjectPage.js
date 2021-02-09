@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Header from '../components/Header'
 import { Link, useParams } from 'react-router-dom'
 import { data } from '../assets/page_data/portfolio/data'
 import { load_page_anim } from '../assets/animations'
@@ -17,6 +18,8 @@ const Project_page = () => {
     const { name, image, category, site_link, github_repo, description} = current_project
     const { overview, key_features, conclusion } = description
     return (
+        <>
+        <Header />
         <main className="site_content_container">
             <div className="project_page_container">
                 <div className="project_content">
@@ -54,6 +57,7 @@ const Project_page = () => {
             </div>
             
         </main>
+        </>
     )
 }
 

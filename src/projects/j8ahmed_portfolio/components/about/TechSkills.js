@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { load_tech_skills_anim } from '../../assets/animations'
 
 const Tech_skills = ({change_section, section_links}) => {
@@ -111,6 +111,11 @@ const Tech_skills = ({change_section, section_links}) => {
                     image: "",
                     value: 60,
                 },
+                {
+                    name: "Open Graph (OGP)",
+                    image: "",
+                    value: 55,
+                },
             ]
         },
     ], [])
@@ -122,7 +127,7 @@ const Tech_skills = ({change_section, section_links}) => {
 
     useEffect(() => {
         load_tech_skills_anim("skill_bar_value", values)
-    }, [])
+    }, [values])
     
     return (
         <React.Fragment>
