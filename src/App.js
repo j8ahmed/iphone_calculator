@@ -1,5 +1,5 @@
 import React from 'react'
-import J8ahmed from './projects/j8ahmed_portfolio'
+import J8ahmed from './j8ahmed_portfolio'
 
 const App = () => {
     return (
