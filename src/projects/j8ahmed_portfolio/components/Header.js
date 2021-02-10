@@ -45,7 +45,7 @@ const Header = () => {
     // }, [])
 
     return (
-        <header ref={header} className={`site_header`}>
+        <header ref={header} className={`site_header ${showLinks ? `expand_site_header` : ``}`}>
             <div className="site_header_navbar_container">
                 <div className="site_header_navbar">
                     <div className="site_header_navbar_logo_container">
