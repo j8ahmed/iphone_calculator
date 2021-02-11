@@ -3,14 +3,16 @@
     .summary_container{
         display: grid;
         justify-content: center;
+        align-content: flex-start;
+        align-items: flex-start;
         grid-template-columns: 3fr 1fr;
     }
     .summary_menu_container{
-        padding: 1rem;
+        padding: 0 1rem;
+        margin: 0 1rem;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 2rem;
         justify-self: flex-end;
-        align-self: flex-end;
     }
 }
