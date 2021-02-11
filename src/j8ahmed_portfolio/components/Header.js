@@ -1,5 +1,5 @@
 import React, { useState, useRef} from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { default_menu_links } from '../assets/defaults'
 import Logo from "../assets/images/icons/logo_icon.svg"
 // const desktop_view_min_width = 800
@@ -56,9 +56,9 @@ const Header = () => {
                             {default_menu_links.map( (link, i) => {
                                 return(
                                     <li key={i} className="site_header_navbar_link_item">
-                                        <Link className="site_link" to={link === "home" ? "/" : `/${link}`}>
+                                        <NavLink className="nav_link" activeClassName="active" exact to={link === "home" ? "/" : `/${link}`}>
                                         {link}
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                 )
                             })}
@@ -92,9 +92,9 @@ const Header = () => {
                                 {default_menu_links.map( (link, i) => {
                                     return(
                                         <li key={i} className="mobile_menu_link_item">
-                                            <Link className="site_link" to={link === "home" ? "/" : `/${link}`}>
+                                            <NavLink className="nav_link" exact to={link === "home" ? "/" : `/${link}`}>
                                             {link}
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                     )
                                 })}

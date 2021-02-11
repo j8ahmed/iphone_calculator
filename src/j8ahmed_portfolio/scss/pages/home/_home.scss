@@ -14,15 +14,13 @@ Home page styles
     max-width: 300px;
     border-radius: 100%;
     border: 10px solid white;
-    background: $primary;
+    background: $tertiary;
     box-shadow: $shadow;
 
     img{
         width: 100%;
         height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center_content;
         border-radius: 100%;
         border: 10px solid $tertiary;
     }
@@ -36,12 +34,11 @@ Home page styles
 }
 .hero_text_intro_container{
     text-align: left;
-    color: white;
+    color: $text;
 }
 .hero_text_main_info{
     font-size: 4em;
 }
-
 
 .site_accent_text{
     font-weight: bold;
@@ -62,32 +59,24 @@ Home page styles
     font-size: 2em;
     text-align: center;
     font-style: italic;
-    color: white;
+    color: $text;
 }
-.text_sub_info_accent a{
-    text-decoration: none;
-    color: $quaternary;
+.text_sub_info_accent{
+    a{
+        text-decoration: none;
+        color: $quaternary;
 
-    &:hover{
-        color: $link_hover;
+        &:hover{
+            color: $link_hover;
+        }
     }
 }
 
 
 
-@media( max-width: 340px ){
-    .home_page_container{
-        /* padding: */
-    }
-    .hero_text_main_info{
-        font-size: 3em;
-    }
-}
+
 
 @media( max-width: 360px ){
-    .home_page_container{
-        /* padding: 0; */
-    }
     .hero_text_main_info{
         font-size: 3em;
     }
@@ -96,16 +85,16 @@ Home page styles
     }
 }
 
-
-
-
 /* DESKTOP VERSION */
-@media( min-width: 800px ){
+@include media_large{
     .home_page_container{
         padding: 1rem;
+
+        .cta_btn{
+            font-size: 1.2rem;
+        }
     }
     .home_page_hero_container{
-        /* background: red; */
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -114,20 +103,11 @@ Home page styles
         margin: 0;
         width: 300px;
         height: 300px;
-        background: $primary;
     }
     .hero_text_container{
         font-weight: bold;
         max-width: 500px;
         max-height: 500px;
-    }
-    .hero_text_intro_container{
-        text-align: left;
-        color: white;
-    }
-    .hero_text_main_info{
-        /* background: $primary; */
-        font-size: 4em;
     }
     .hero_text_intro_container p{
         margin: 0;
@@ -139,13 +119,7 @@ Home page styles
         color: $quaternary;
     }
     .hero_text_sub_info{
-        margin: 0 auto;
-        max-width: 800px;
         padding: 2rem 1rem 2rem 0;
-        font-size: 2em;
-        text-align: right;
-        font-style: italic;
-        color: white;
     }
 }
 

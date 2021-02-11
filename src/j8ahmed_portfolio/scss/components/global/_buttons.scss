@@ -1,6 +1,11 @@
 /* call to action buttons */
 
 $btn_circle_img: url(../../../assets/images/icons/button_circle_bg.svg);
+$btn_size_xtra_small: 70px;
+$btn_size_small: 80px;
+$btn_size_medium: 100px;
+$btn_size_large: 150px;
+
 
 .cta_btns_container{
     margin: 2rem auto;
@@ -9,18 +14,19 @@ $btn_circle_img: url(../../../assets/images/icons/button_circle_bg.svg);
     justify-content: center;
 }
 .cta_btn{
-    color: white;
-    position: relative;
-    width: 100px;
-    height: 100px;
-    padding: 2rem;
+    padding: 0.5rem;
     margin: 1rem;
+    position: relative;
+    width: $btn_size_medium;
+    height: $btn_size_medium;
+    @include center_content;
     background: none;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    font-size: 1.2rem;  
+    font-weight: bold;  
+    color: $text;
+    text-transform: capitalize;
     transition: 0.5s transform, 0.25s color;
 
     &:hover{
@@ -33,7 +39,7 @@ $btn_circle_img: url(../../../assets/images/icons/button_circle_bg.svg);
     }
     
     a{
-        color: $link;
+        color: $text;
         text-decoration: none;
     }
     
@@ -42,8 +48,8 @@ $btn_circle_img: url(../../../assets/images/icons/button_circle_bg.svg);
         position: absolute;
         z-index: -1;
         top: 0;
-        width: 100px;
-        height: 100px;
+        width: $btn_size_medium;
+        height: $btn_size_medium;
         transform-origin: center;
         background-size: 100%;
         background-image: $btn_circle_img;
@@ -61,13 +67,14 @@ $btn_circle_img: url(../../../assets/images/icons/button_circle_bg.svg);
         justify-content: center;
     }
     .cta_btn:before{
-        width: 80px;
-        height: 80px;
+        width: $btn_size_small;
+        height: $btn_size_small;
     }
     .cta_btn{
-        width: 80px;
-        height: 80px;
+        width: $btn_size_small;
+        height: $btn_size_small;
         margin:0.5rem;
+        font-size: 1rem;
     }
 }
 /* extra small screens */
@@ -79,17 +86,23 @@ $btn_circle_img: url(../../../assets/images/icons/button_circle_bg.svg);
 
     }
     .cta_btn:before{
-        width: 70px;
-        height: 70px;
+        width: $btn_size_xtra_small;
+        height: $btn_size_xtra_small;
     }
     .cta_btn{
-        width: 70px;
-        height: 70px;
+        width: $btn_size_xtra_small;
+        height: $btn_size_xtra_small;
     }
 }
 /* large screens */
 @include media_large{
-    .site_content_container{
-        margin-top:0;
+    .cta_btn{
+        width: $btn_size_large;
+        height: $btn_size_large;
+        
+        &::before{
+            width: $btn_size_large;
+            height: $btn_size_large;
+        }
     }
 }
