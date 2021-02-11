@@ -7,6 +7,7 @@ import { load_page_anim, load_home_page_anim } from '../assets/animations'
 const Home_page = () => {
 
     useEffect(() => {
+        window.scrollTo(0,0)
         const tl = load_page_anim()
         load_home_page_anim(tl)
     }, [])

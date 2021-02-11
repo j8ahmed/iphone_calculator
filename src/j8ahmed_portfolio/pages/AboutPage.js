@@ -27,6 +27,7 @@ const About_page = () => {
     }
 
     useEffect(() => {
+        window.scrollTo(0,0)
         localStorage.setItem("about_section", section)
         load_page_anim()
     }, [section])

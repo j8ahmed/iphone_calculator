@@ -48,6 +48,7 @@ const Contact_page = () => {
     }, [])
 
     useEffect(() => {
+        window.scrollTo(0,0)
         load_page_anim()
     }, [])
     
