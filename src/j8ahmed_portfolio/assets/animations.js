@@ -31,7 +31,6 @@ export const load_home_page_anim = (tl = gsap.timeline({autoAlpha:0})) => {
     .fromTo(".hero_text_container", {opacity:0, y:-100}, {opacity:1, y:0, duration:0.5, ease:"back"})
     .fromTo(".hero_image_container", {opacity:0, y:-100}, {opacity:1, y:0, duration:0.5, ease:"back"}, "<0.2")
     .fromTo(".hero_details_container", {opacity:0, y:100}, {opacity:1, y:0, duration:0.5, ease:"back"}, "<0.2")
-    // .fromTo(elem, {opacity: 0}, {opacity: 1})
     ;
     return tl
 }
