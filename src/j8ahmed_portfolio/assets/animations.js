@@ -13,7 +13,6 @@ export const toggle_mobile_nav_menu_anim = (container, menu, open = true, tl = g
         .fromTo(container, {height: height}, {height: 0})
         ;
     }
-    
     return tl
 }
 
@@ -25,6 +24,18 @@ export const load_page_anim = (tl = gsap.timeline({autoAlpha:0})) => {
     ;
     return tl
 }
+
+//Home page animation.
+export const load_home_page_anim = (tl = gsap.timeline({autoAlpha:0})) => {
+    tl
+    .fromTo(".hero_text_container", {opacity:0, y:-100}, {opacity:1, y:0, duration:0.5, ease:"back"})
+    .fromTo(".hero_image_container", {opacity:0, y:-100}, {opacity:1, y:0, duration:0.5, ease:"back"}, "<0.2")
+    .fromTo(".hero_details_container", {opacity:0, y:100}, {opacity:1, y:0, duration:0.5, ease:"back"}, "<0.2")
+    // .fromTo(elem, {opacity: 0}, {opacity: 1})
+    ;
+    return tl
+}
+
 
 //animation for reloading filtered projects on the portfolio page.
 export const load_projects_anim = (elem, tl = gsap.timeline({autoAlpha:0})) => {

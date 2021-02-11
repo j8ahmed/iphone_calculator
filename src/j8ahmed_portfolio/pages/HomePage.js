@@ -2,12 +2,13 @@ import React, {useEffect} from 'react'
 import Header from '../components/Header'
 import profile_pic from '../assets/images/square_profile_pic.jpeg'
 import { Link } from 'react-router-dom'
-import { load_page_anim } from '../assets/animations'
+import { load_page_anim, load_home_page_anim } from '../assets/animations'
 
 const Home_page = () => {
 
     useEffect(() => {
-        load_page_anim()
+        const tl = load_page_anim()
+        load_home_page_anim(tl)
     }, [])
     
     return (
