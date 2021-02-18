@@ -20,6 +20,22 @@ const Portfolio_page = () => {
         return [...new Set(list)]
     }, [] )
 
+    const debounce = (func, wait, immediate) => {
+        let timeout;
+        
+        return function(...args) {          
+            clearTimeout(timeout)
+
+            if (immediate){
+                func(...args)
+            } else {
+                timeout = setTimeout(() => {
+                    func(...args)
+                }, wait);
+            }            
+        }
+    }
+
     const filter_projects = useCallback( async (text, search_by_category=true) => {
         setIsLoading(true)
         //fake fetch to imitate async fetch()
@@ -56,6 +72,7 @@ const Portfolio_page = () => {
     useEffect(() => {
         let to
         if(init.current && !isLoading) {
+            // adding delay to the load animation to ensure all the products get accessed and animated by GSAP
             to = setTimeout( () => {
                 load_projects_anim(projects.length >= 1 ? ".portfolio_project_item" : ".no_projects_container")
             }, 250)
@@ -68,6 +85,10 @@ const Portfolio_page = () => {
         const tl = load_page_anim()
         load_projects_anim(".portfolio_project_item", tl)
         init.current = true
+
+
+        // const newFunction = debounce()
+        // newFunction()
     }, [])
 
 
@@ -80,6 +101,7 @@ const Portfolio_page = () => {
                 <h2 className="site_page_heading">Code Projects</h2>
                 <Navigation 
                     category_list={category_list}
+                    debounce={debounce}
                     get_filtered_projects={filter_projects}
                     />
                 {isLoading ? <Loader /> : projects.length <= 0 ?  
@@ -104,3 +126,5 @@ const Portfolio_page = () => {
 }
 
 export default Portfolio_page
+
+

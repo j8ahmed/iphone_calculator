@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 // const {log} = console
 
-const Portfolio_navigation = ({category_list, get_filtered_projects}) => {
+const Portfolio_navigation = ({category_list, debounce, get_filtered_projects}) => {
     const search = useRef(null)
+    const debounced_search = debounce( get_filtered_projects, 750, false)
     
     return (
         <div className="portfolio_navigation_container">
@@ -17,7 +18,7 @@ const Portfolio_navigation = ({category_list, get_filtered_projects}) => {
                     <div className="search_bar_form_elem_container">
                         <label htmlFor="search" className="search_label site_page_subheading">Search Using Keywords:</label>
                         <input ref={search} tabIndex="1" name="search" type="search" placeholder="React I Phone Calculator" className="search_bar_input" 
-                        onChange={ (e) => get_filtered_projects(e.target.value, false)}
+                        onChange={ (e) => debounced_search(e.target.value, false)}
                         />
                     </div>
                 </form>
