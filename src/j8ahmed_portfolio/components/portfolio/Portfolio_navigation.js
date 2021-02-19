@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
+import { debounce } from 'lodash'
 // const {log} = console
 
-const Portfolio_navigation = ({category_list, debounce, get_filtered_projects}) => {
+const Portfolio_navigation = ({category_list, get_filtered_projects}) => {
     const search = useRef(null)
-    const debounced_search = debounce( get_filtered_projects, 750, false)
+    const debounced_search = debounce( get_filtered_projects, 750)
     
     return (
         <div className="portfolio_navigation_container">
