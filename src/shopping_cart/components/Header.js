@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { cartTest } from '../assets/redux/features/cart/cartSlice'
-import { useGlobalContext } from './AppProvider'
+// import { cartTest } from '../assets/redux/features/cart/cartSlice'
+// import { useGlobalContext } from './AppProvider'
 
 const cartCount = state => state.cart.cartCount
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef, useMemo } from 'react'
-import { useGlobalContext } from './AppProvider'
+// import { useGlobalContext } from './AppProvider'
 import CartItem from './CartItem'
 
 
@@ -7,9 +7,9 @@ import { remove_all_items, reload_cart } from '../assets/animations'
 
 //Redux
 import { useSelector, useDispatch } from 'react-redux'
-import { cartTest, clearCart, cartItems, cartTotalPrice, cartSize } from '../assets/redux/features/cart/cartSlice'
+import { clearCart, cartItems, cartTotalPrice, cartSize } from '../assets/redux/features/cart/cartSlice'
 
-const {log} = console
+// const {log} = console
 
 const Cart = () => {
     // React useContext & useReducer State Management
@@ -43,7 +43,7 @@ const Cart = () => {
         tl.add( () => {
             dispatch(clearCart())
         }, ">0.5")
-    }, [])
+    }, [dispatch])
     
     useEffect(() => {
         if(init.current && numItems <= 0) reload_cart()

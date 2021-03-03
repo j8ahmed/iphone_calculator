@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { items } from '../../../dataset'
-
 
 //selectors
 export const cartItems = state => state.cart.cartItems
@@ -14,7 +12,6 @@ const initialState = {
     cartItems: {}
 }    
 
-
 //util functions
 const removeCartItem = (id, state) => {
     state.cartCount -= 1
@@ -27,10 +24,6 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers:{
-        cartTest(state, action){
-            state.message = "test ran in cart Reducer"
-            return state
-        },
         addToCart:{
             reducer(state, action){
                 // Items should always be an object with new 
@@ -65,31 +58,23 @@ const cartSlice = createSlice({
         },
         toggleQuantity:{
             reducer(state, action){
-                const {id, newQuantity, remove} = action.payload
-                if(remove){
-                    // return removeCartItem(id, state.cartItems)
-                }
-                state.cartItems[id] = newQuantity
+                const {id, num} = action.payload
+                const item = state.cartItems[id]
+
+                item.quantity += num
+                state.cartCount += num
+                state.totalPrice += num * item.price
             },
-            prepare(id, quantity, dir){
-                const newQuantity = quantity + dir
+            prepare(id, num){
                 return {
-                    payload: {
-                        id,
-                        newQuantity, 
-                        remove: newQuantity <= 0 ? true : false,
-                    }
+                    payload: { id, num }
                 }
             }
         },
-
-        // Write out the cart state reducers: toggle value, remove item, clear all items
     },
-
 })
 
 export const { 
-    cartTest, 
     addToCart, 
     clearCart, 
     removeItem, 

@@ -7,7 +7,7 @@ import store from './assets/redux/store'
 
 import Header from './components/Header'
 import Cart from './components/Cart'
-import { AppProvider } from './components/AppProvider'
+// import { AppProvider } from './components/AppProvider'
 
 import { load_app } from './assets/animations'
 

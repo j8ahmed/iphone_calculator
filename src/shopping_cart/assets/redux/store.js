@@ -14,6 +14,5 @@ const store = configureStore({
 })
 
 store.dispatch(addToCart(items))
-console.log(store.getState())
 
 export default store

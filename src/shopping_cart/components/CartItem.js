@@ -1,11 +1,11 @@
 import React, { useRef, useCallback } from 'react'
-import { useGlobalContext } from './AppProvider'
+// import { useGlobalContext } from './AppProvider'
 import { remove_item_anim, remove_last_item_anim } from '../assets/animations'
 
 //Redux
 import { useSelector, useDispatch } from 'react-redux'
 import { cartItem, toggleQuantity, removeItem, cartSize } from '../assets/redux/features/cart/cartSlice'
-import { remove } from 'lodash'
+// import { remove } from 'lodash'
 
 const CartItem = ({ ID }) => {
     const cart_item = useRef(null)
@@ -15,20 +15,18 @@ const CartItem = ({ ID }) => {
     // } = useGlobalContext()
 
     const dispatch = useDispatch()
-    const { id, name, price, quantity, image } = useSelector(cartItem(ID))
-    
+    const { name, price, quantity, image } = useSelector(cartItem(ID))
+
     const remove_item = useCallback( () => {
         let tl = cartSize === 1 ? remove_last_item_anim() : remove_item_anim(cart_item.current);
         tl.add( () => {
            dispatch(removeItem(ID)) 
         }, ">0.25")
-    }, [])
+    }, [ID, dispatch])
 
     const change_item_quantity = (num) => {
-       dispatch(toggleQuantity(ID, quantity, num))
-    }
-    const removeThisItem = () => {
-       
+        if(num + quantity <= 0) remove_item()
+        else dispatch(toggleQuantity(ID, num))
     }
 
     return (

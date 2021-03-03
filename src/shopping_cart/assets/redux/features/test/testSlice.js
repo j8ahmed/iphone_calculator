@@ -14,5 +14,6 @@ const testSlice = createSlice({
         }
     }
 })
+export const { sayHello } = testSlice.actions
 
 export default testSlice.reducer
