@@ -1,10 +1,10 @@
 import React from 'react'
-import ShoppingCart from './shopping_cart'
+import Portfolio from './j8ahmed_portfolio'
 
 const App = () => {
     return (
     <React.Fragment> 
-        <ShoppingCart />
+        <Portfolio />
     </React.Fragment>)
 }
 
