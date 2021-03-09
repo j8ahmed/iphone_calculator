@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 //selectors
-export const theme = state => state.theme
+export const siteTheme = state => state.global.theme
 
 //initial state
 const initialState = {
@@ -15,8 +15,8 @@ const globalSlice = createSlice({
     name: "global",
     initialState: initialState,
     reducers:{
-        toggleTheme(state, action){
-            state.theme = action.payload
+        toggleTheme(state){
+            state.theme = state.theme === 'light' ? 'dark' : 'light'
         }
     }
 })

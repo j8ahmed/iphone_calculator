@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
 import { useParams } from 'react-router-dom'
 const {log} = console
 
@@ -32,8 +31,6 @@ const Blog_post_page = () => {
     }, [blog])
 
     return (
-        <>
-        <Header />
         <main className="site_content_container">
             <h1>Blog page</h1>
             <h2>Blog Post ID: {id}</h2>
@@ -42,7 +39,6 @@ const Blog_post_page = () => {
                 dangerouslySetInnerHTML={{__html: blog[0].content.rendered}} />
                  : null}
         </main>
-        </>
     )
 }
 

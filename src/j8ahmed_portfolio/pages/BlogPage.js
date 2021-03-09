@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import Header from '../components/Header'
 const {log} = console
 
 const Blog_page = () => {
@@ -36,8 +35,6 @@ const Blog_page = () => {
         )
     } else {
         return (
-            <>
-            <Header />
             <main className="site_content_container">
                 <h2>Blog</h2>
                 <div className="blog_posts_list_container">
@@ -60,7 +57,6 @@ const Blog_page = () => {
                     </ul>
                 </div>
             </main>
-            </>
         )
     }
 }

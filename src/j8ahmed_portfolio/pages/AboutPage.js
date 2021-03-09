@@ -1,17 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import Header from '../components/Header'
 import Index from '../components/about'
 import Values from '../components/about/Values'
 import SoftSkills from '../components/about/SoftSkills'
 import TechSkills from '../components/about/TechSkills'
 import { load_page_anim, fade_page_out_anim } from '../assets/animations'
-// import { useGlobalContext } from '../components/AppProvider'
 // const {log} = console
 
 const About_page = () => {
     const sections_list = ["summary", "values", "tech skills", "soft skills"]
     const [ section, setSection] = useState(localStorage.getItem("about_section"))
-    // const { isLoading, load_page } = useGlobalContext()
 
     const change_section = useCallback( (section) => {
         const tl = fade_page_out_anim()
@@ -60,14 +57,11 @@ const About_page = () => {
     }
 
     return (
-        <>
-        <Header />
         <main className="site_content_container">
             <div className="about_content_container">
                 {current_section}
             </div>
         </main>
-        </>
     )
 }
 

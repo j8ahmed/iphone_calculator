@@ -9,6 +9,7 @@
 @import './components/global/header';
 @import './components/global/footer';
 @import './components/global/buttons';
+@import './components/global/dark_mode_btn';
 
 
 /* main page imports */
@@ -18,8 +19,6 @@
 @import './pages/project_page/project_page';
 @import './pages/contact/contact';
 @import './pages/error/error';
-
-
 
 
 
@@ -34,22 +33,26 @@ a,button{
     cursor: pointer;
     transition: 0.25s color;
 }
-
-
 body{
-    position: relative;
+    padding: 0;
+    margin: 0;
     max-width: 100%;
     min-height: 101vh;
-    background: $theme_bg_gradient;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+    transition: background 0.25s;
 }
-#root{
-    width: 100%;
-}
+
+#root{ width: 100%; }
+
 .site_content_container{
     visibility: hidden;
     position: relative;
@@ -80,12 +83,7 @@ body{
     font-size: $sub_heading_font_size;
 }
 .site_link{
-    color: $link;
     transition: 0.25s color;
-
-    &:hover{ 
-        color: $link_hover;
-    }
 }
 .site_paragraph{
     margin: 2rem 0;
@@ -96,27 +94,27 @@ body{
 
 
 
+/* THEME COLORS */
+body{
+    &.light{ 
+        background: $theme_bg_gradient;
+    
+        .site_link{
+            color: $link;        
+            &:hover{ 
+                color: $link_hover;
+            }
+        }
 
+    }
+    &.dark{  
+        background: $dark_theme_bg_gradient; 
 
-
-
-/* MEDIA QUERIES */
-// @include media_small{
-//     .site_content_container{
-        
-//     }
-// }
-
-
-// @include media_medium{
-//     .site_content_container{
-//         margin-top:200px;
-//     }
-// }
-// @include media_large{
-//     .site_content_container{
-//         margin-top:0;
-//     }
-// }
-
-
+        .site_link{
+            color: $link_dark;
+            &:hover{ 
+                color: $link_hover_dark;
+            }
+        }        
+    }
+}

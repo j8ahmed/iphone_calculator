@@ -60,6 +60,26 @@ $btn_size_large: 150px;
 
 
 
+/* THEME COLORS */
+body{
+    &.light{
+
+    }
+    &.dark{
+        .cta_btn{
+            color: $text_dark;
+            &:hover{
+                color: $link_hover_dark;        
+                a{ color: $link_hover_dark; }
+            }
+            
+            a{ color: $text_dark; }
+        }
+    }
+}
+/* ************ */
+
+
 /* small screens */
 @include media_small{
     .cta_btns_container{

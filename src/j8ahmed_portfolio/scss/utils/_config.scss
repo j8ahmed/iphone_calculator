@@ -4,20 +4,28 @@ $secondary:         rgb(72, 169, 166);
 $tertiary:          rgb(228, 223, 218);
 $quaternary:        rgb(242, 232, 99);
 $quinary:           rgb(251, 34, 44);
+$dark_blue:         rgb(0,27,51);
+$black:             rgb(0,16,31);
 
 
-$text:              rgb(255,255,255);
-$heading:             $text;
-$accent:              $quaternary;
-$link:                $tertiary;
-$link_hover:        rgb(0,0,0);
-$theme_bg_gradient:   linear-gradient(45deg, $primary, $secondary, $primary);
+$text:                    rgb(255,255,255);
+$text_dark:               rgb(255,255,255);
+$heading:                   $text;
+$heading_dark:              $text_dark;
+$accent:                    $quaternary;
+$link:                      $tertiary;
+$link_dark:                 $tertiary;
+$link_hover:              rgb(0,0,0);
+$link_hover_dark:           $quaternary;
+$theme_bg_gradient:         linear-gradient(45deg, $primary, $secondary, $primary);
+$dark_theme_bg_gradient:    linear-gradient(45deg, $dark_blue, $black, $dark_blue);
 
 
 
 // $link_hover_bg:;
 $menu_btn_bar:      rgb(255,255,255);
 $menu_bg:             $primary;
+$menu_bg_dark:        $dark_blue;
 $bg_white:          rgb(240, 250, 250);
 // $accent:
 

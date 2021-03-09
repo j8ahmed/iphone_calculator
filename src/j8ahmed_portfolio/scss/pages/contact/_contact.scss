@@ -42,17 +42,8 @@ $social_link_colors: (
     display: flex;
     align-items: center;
 
-    
     .email_link{
         @extend %contact_button;
-        
-        a{
-            color: $quaternary;
-
-            &:hover{
-                color: $link_hover;
-            }
-        }
     }
 }
 
@@ -82,3 +73,27 @@ $social_link_colors: (
 }
 
 
+/* THEME COLORS */
+body{
+    &.light{
+        .email_container{
+            .email_link{
+                a{
+                    color: $text;
+                    &:hover{ color: $link_hover; }
+                }
+            }
+        }
+    }
+    &.dark{
+        .email_container{
+            .email_link{
+                a{
+                    color: $text_dark;
+                    &:hover{ color: $link_hover_dark; }
+                }
+            }
+        }
+    }
+}
+/* ************ */

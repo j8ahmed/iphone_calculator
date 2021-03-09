@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
-import Header from '../components/Header'
 import { data } from '../assets/page_data/portfolio/data'
 import Navigation from '../components/portfolio/Portfolio_navigation'
 import Project from '../components/portfolio/Portfolio_project'
-import Loader from '../components/Loader'
+import Loader from '../components/global/Loader'
 import { load_page_anim, load_projects_anim } from '../assets/animations'
 // const {log} = console
 
@@ -76,8 +75,6 @@ const Portfolio_page = () => {
     }, [])
 
     return (
-        <>
-        <Header />
         <main className="site_content_container">
             <div className="portfolio_page_container">
                 <h2 className="site_page_heading">Code Projects</h2>
@@ -102,7 +99,6 @@ const Portfolio_page = () => {
                 }
             </div>
         </main>
-        </>
     )
 }
 

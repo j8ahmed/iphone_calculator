@@ -1,18 +1,22 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Home from '../pages/HomePage'
-import About from '../pages/AboutPage'
-import Portfolio from '../pages/PortfolioPage'
-import Project from '../pages/ProjectPage'
-// import Blog from '../pages/BlogPage'
-// import BlogPost from '../pages/BlogPostPage'
-import Contact from '../pages/ContactPage'
-import Error from '../pages/ErrorPage'
+import Header from './Header'
+import Footer from './Footer'
+import Home from '../../pages/HomePage'
+import About from '../../pages/AboutPage'
+import Portfolio from '../../pages/PortfolioPage'
+import Project from '../../pages/ProjectPage'
+// import Blog from '../../pages/BlogPage'
+// import BlogPost from '../../pages/BlogPostPage'
+import Contact from '../../pages/ContactPage'
+import Error from '../../pages/ErrorPage'
 
 const ReactRouterSetup = () => {
+
     return (
         <Router>
+
+            <Header/>
 
             <Switch>
                 <Route exact path="/">

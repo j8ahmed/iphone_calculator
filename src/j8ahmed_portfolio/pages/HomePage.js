@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import Header from '../components/Header'
 import profile_pic from '../assets/images/square_profile_pic.jpeg'
 import { Link } from 'react-router-dom'
 import { load_page_anim, load_home_page_anim } from '../assets/animations'
@@ -13,8 +12,6 @@ const Home_page = () => {
     }, [])
     
     return (
-        <React.Fragment>
-            <Header />
             <main className="site_content_container">
                 <section className="home_page_container">
                     <div className="home_page_hero_container">
@@ -51,7 +48,6 @@ const Home_page = () => {
                 
                 
             </main>
-        </React.Fragment>
     )
 }
 

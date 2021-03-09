@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, useCallback } from 'react'
-import reducer from '../assets/reducer'
-import { default_state } from '../assets/defaults'
+import reducer from '../../assets/reducer'
+import { default_state } from '../../assets/defaults'
 
 const AppContext = createContext()
 

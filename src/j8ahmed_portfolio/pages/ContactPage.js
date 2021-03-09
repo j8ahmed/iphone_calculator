@@ -1,5 +1,4 @@
 import React, {useEffect, useMemo } from 'react'
-import Header from '../components/Header'
 import { load_page_anim } from '../assets/animations'
 const Contact_page = () => {
     const social_links_list = useMemo( () => {
@@ -53,8 +52,6 @@ const Contact_page = () => {
     }, [])
     
     return (
-        <>
-        <Header />
         <main className="site_content_container">
             
             <div className="contact_page_container">
@@ -88,7 +85,6 @@ const Contact_page = () => {
                 </div>
             </div>
         </main>
-        </>
     )
 }
 

@@ -65,9 +65,9 @@
 }
 
 
-.site_header_navbar_mobile_menu_button_container{
+// .site_header_navbar_mobile_menu_button_container{
     
-}
+// }
 .site_header_navbar_mobile_menu_button,
 .mobile_menu_header_mobile_menu_button{
     width: 40px;
@@ -126,12 +126,11 @@
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    background: $menu_bg;
     transition: 0.25s left;
 }
-.mobile_menu{
+// .mobile_menu{
 
-}
+// }
 .mobile_menu_header{
     padding: 1rem;
     display: flex;
@@ -160,9 +159,9 @@
     }
 }
 
-.mobile_menu_links_list_container{
+// .mobile_menu_links_list_container{
 
-}
+// }
 .mobile_menu_links_list{
     margin: 0;
     padding: 0;
@@ -193,8 +192,65 @@
         }
     }
 }
+.dm_toggle_container{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+}
 
 /*****************************************************/
+
+/* THEME COLORS */
+body{
+    &.light{ 
+        .mobile_menu_container{
+            background: $menu_bg;
+        }
+    }
+    &.dark{  
+        .site_header{
+            background: linear-gradient(180deg, rgba($dark_blue, 0.8), rgba(0,0,0,0) );
+        }
+        .mobile_menu_container{
+            background: $menu_bg_dark;
+        }
+        .site_header_navbar_link_item {
+    
+            .nav_link{
+                color: $link_dark;
+        
+                &:hover{
+                    color: $link_hover_dark;
+                }
+            }
+        }
+        // .mobile_menu_link_item{
+        //     .nav_link{
+        //         padding: 1rem;
+        //         padding-left: 2rem;
+        //         display: block;
+        //         font-size: 1.25em;
+        //         color: $link;
+        //         text-decoration: none;
+        //         text-transform: capitalize;
+                
+        //         &:hover{
+        //             color: $link_hover;
+        //             background: $accent;
+        //         }
+        //     }
+        //     .active{
+        //         color: $quaternary;
+        //         text-decoration: underline;
+        
+        //         &:hover{
+        //             color: $quaternary;
+        //         }
+        //     }
+        // }
+    }
+}
 
 
 @include media_large{
