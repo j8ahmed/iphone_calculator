@@ -11,7 +11,6 @@ Portfolio page styles
 .no_projects_container{
     visibility: hidden;
     margin: 4rem 0;
-    color: $text;
 }
 
 
@@ -27,7 +26,6 @@ Portfolio page styles
 }
 .portfolio_project_item{
     visibility: hidden;
-    background: $bg_white;
     border-radius: 1rem;
     box-shadow: $shadow;
     transition: 0.5s height, 0.5s width;
@@ -62,15 +60,13 @@ Portfolio page styles
     display: grid;
     grid-gap: 1rem;
 }
-.project_card_header{
-    
-}
-.project_name_and_category_container{
 
-}
-.project_card_name{
+// .project_name_and_category_container{
 
-}
+// }
+// .project_card_name{
+
+// }
 .project_card_category{
     margin: 0.5rem 0;
     font-size: 1em;
@@ -83,9 +79,30 @@ Portfolio page styles
     a{
         color: $quinary;
         text-decoration: none;
+    }
+}
 
-        &:hover{
-            color: $link_hover;
+/* THEME COLORS */
+body{
+    &.light{ 
+        .project_card_header{ color: black; }
+        .no_projects_container{ color: $text; }
+        .portfolio_project_item{ background: $bg_white; }
+        .project_page_link{
+            a{
+                &:hover{ color: $link_hover; }
+            }
+        }
+    }
+    &.dark{  
+        .no_projects_container{ color: $text_dark; }
+        .project_card_header{ color: $text_dark; }
+        .portfolio_project_item{ background: $bg_dark; }
+        .project_page_link{
+            a{
+                &:hover{ color: $link_hover_dark; }
+            }
         }
     }
 }
+/* ************ */

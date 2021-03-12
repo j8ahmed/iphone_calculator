@@ -9,14 +9,14 @@ $black:             rgb(0,16,31);
 
 
 $text:                    rgb(255,255,255);
-$text_dark:               rgb(255,255,255);
+$text_dark:                 $tertiary;
 $heading:                   $text;
 $heading_dark:              $text_dark;
 $accent:                    $quaternary;
 $link:                      $tertiary;
 $link_dark:                 $tertiary;
 $link_hover:              rgb(0,0,0);
-$link_hover_dark:           $quaternary;
+$link_hover_dark:           $quinary;
 $theme_bg_gradient:         linear-gradient(45deg, $primary, $secondary, $primary);
 $dark_theme_bg_gradient:    linear-gradient(45deg, $dark_blue, $black, $dark_blue);
 
@@ -27,6 +27,7 @@ $menu_btn_bar:      rgb(255,255,255);
 $menu_bg:             $primary;
 $menu_bg_dark:        $dark_blue;
 $bg_white:          rgb(240, 250, 250);
+$bg_dark:           rgb(40, 40, 50);
 // $accent:
 
 

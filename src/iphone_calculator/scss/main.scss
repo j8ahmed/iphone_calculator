@@ -1,0 +1,139 @@
+*{
+  box-sizing: border-box;
+  font-family: helvetica;
+}
+body{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+
+  
+#app{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 80vw;
+  margin: auto;
+  background-color: black;
+
+  h1{
+    text-align: center
+  }
+}
+
+#calculator{
+  padding: 10px;
+  background-color: black;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 100px auto;
+  grid-template-areas: "display" "button";
+}
+#display{
+  grid-area: display;
+  display: grid;
+  justify-content: flex-end;
+  align-content: flex-end;
+  background-color: black;
+  padding: 0 30px;
+  font-size: 5em;
+}
+#calc-layout{
+  grid-area: button;
+  padding: 10px; 
+  display: grid ;
+  justify-content: center;
+  grid-template-areas: 'Tools Operators' 'NumPad Operators';
+  grid-template-columns: 250px 85px;
+  grid-template-rows: auto 1fr;
+}
+.calc-section{
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
+  align-content: flex-start;
+  grid-template-rows: repeat(auto-fit, 75px);
+  grid-template-columns: repeat(auto-fit, 75px);
+}
+
+#tools{
+  grid-area: Tools;
+
+  & > .calc-button{
+    background-color: hsl(180, 0%, 50%);
+    color: black;
+    
+    &:hover, &:active{
+      background-color: hsl(180, 0%, 80%);
+    }
+  }
+}
+
+#operators{
+  grid-area: Operators;
+  padding: 0 10px;
+
+  & > .calc-button{
+    background-color: hsl(40, 100%, 50%);
+    .operation_icon{ fill: white; }
+    &:hover{
+      background-color: hsl(40, 100%, 70%);
+    }
+    &:focus{
+      color: hsl(40, 100%, 50%);
+      background-color: white;
+      
+      .operation_icon{ fill: hsl(40, 100%, 50%); }
+    }
+  }
+}
+
+#numPad{
+  grid-area: NumPad;
+  padding: 10px 0;
+  grid-template-areas: 'seven eight nine' 'four five six' 'one two three' 'zero zero decimal';
+  
+  & > .calc-button{
+    background-color: hsl(180, 0%, 20%);
+    &:hover, &:active{
+      background-color: hsl(180, 0%, 60%) ;
+    } 
+  }
+}
+
+$button_size: 75px;
+.calc-button{
+  min-width: $button_size ;
+  height: $button_size;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: white;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  font-size: 2em;
+  transition: all 0.5s;
+  &:hover{
+    cursor: pointer;
+  }
+
+  .btn_icon{
+    width: 60%;
+    height: auto;
+    border-radius: 100%;
+  }
+
+}
+
+
+  

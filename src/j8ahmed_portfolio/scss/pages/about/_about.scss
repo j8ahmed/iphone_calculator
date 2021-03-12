@@ -32,7 +32,18 @@
     }
 }
 
-
+/* THEME COLORS */
+body{
+    &.light{ 
+        .about_text_container{ color: $text; }
+        .about_section_heading{ color: $heading; }
+    }
+    &.dark{  
+        .about_text_container{ color: $text_dark; }
+        .about_section_heading{ color: $heading_dark; }
+    }
+}
+/* ************ */
 
 
 

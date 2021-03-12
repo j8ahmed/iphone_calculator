@@ -4,11 +4,7 @@ import { siteTheme, toggleTheme } from '../../assets/redux/features/global/globa
 
 const DarkModeButton = () => {
     const theme = useSelector(siteTheme)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        console.log(theme);
-    }, [theme])
+    const dispatch = useDispatch()  
 
     useEffect(() => {
         document.querySelector('body').className = theme

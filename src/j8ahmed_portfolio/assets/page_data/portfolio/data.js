@@ -35,18 +35,18 @@ export const data = {
             id: 1,
             name: "Shopping Cart App",
             image: ProjectImage1,
-            category: ["React", "GSAP"],
-            site_link: "https://j8ahmed-react-shopping-cart-app.netlify.app/",
+            category: ["React", "Redux", "GSAP"],
+            site_link: "https://react-redux-shopping-cart-app.netlify.app/",
             github_repo: "https://github.com/j8ahmed/react_shopping_cart_app",
             description: {
-                overview: "This project was built as a React Single Page Application (SPA). It is an example shopping cart page that includes adjustable item quantities, a running cart total and a running count of the total number of cart items.",
+                overview: "This project was built as a React Single Page Application (SPA). It is an example shopping cart page that includes adjustable item quantities, a running cart total and a running count of the total number of cart items. All the state values are stored using Redux RTK.",
                 key_features: [
                     "It allows for users to delete items, increase the quantity of items, and view the running price of the cart.",
                     "It utilizes the React useReducer hook to run and manage the state change for the app.",
                     "It stages functional event and runs animations around those events using the Greensock Animation Platform (GSAP).",
                     "It was built with a mobile first approach.",
                 ],
-                conclusion: "Overall, it was a great project that helped me further hone my animation skills while staging functional events and React component re-renders. I completed this project as part of a React projects YouTube course in January 2021 from freeCodeCamp.",
+                conclusion: "Overall, it was a great project that helped me parctice using the moder Redux RTK standards and further hone my animation skills while staging functional events and React component re-renders. I completed this project as part of a React projects YouTube course in January 2021 from freeCodeCamp.",
             },
         },
         {
@@ -223,7 +223,7 @@ export const data = {
         },
         {
             id: 10002,
-            name: "React I Phone Calculator",
+            name: "I Phone Calculator",
             image: ProjectImage02,
             category: ["React", "Redux"],
             site_link: "https://codepen.io/J8ahmed/pen/GBwgBe",

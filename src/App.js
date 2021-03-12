@@ -1,10 +1,10 @@
 import React from 'react'
-import Portfolio from './j8ahmed_portfolio'
+import Calculator from './iphone_calculator'
 
 const App = () => {
     return (
     <React.Fragment> 
-        <Portfolio />
+        <Calculator />
     </React.Fragment>)
 }
 

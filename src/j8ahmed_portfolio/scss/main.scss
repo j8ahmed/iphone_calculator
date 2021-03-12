@@ -67,7 +67,6 @@ body{
     position: relative;
     font-size: $heading_font_size;
     text-align: left;
-    color: $heading;
 
     &:after{
         content: '';
@@ -89,7 +88,6 @@ body{
     margin: 2rem 0;
     text-align: left;
     font-size: 2rem;
-    color: $text;
 }
 
 
@@ -98,23 +96,27 @@ body{
 body{
     &.light{ 
         background: $theme_bg_gradient;
-    
+        
         .site_link{
             color: $link;        
-            &:hover{ 
-                color: $link_hover;
-            }
+            &:hover{ color: $link_hover; }
         }
-
+        .site_content_container{ color: $text; }
+        .site_page_heading{ color: $heading; }
+        .site_paragraph{ color: $text; }
+        
     }
     &.dark{  
         background: $dark_theme_bg_gradient; 
-
+        
         .site_link{
             color: $link_dark;
-            &:hover{ 
-                color: $link_hover_dark;
-            }
-        }        
+            &:hover{ color: $link_hover_dark; }
+        }   
+        .site_content_container{ color: $text_dark; }
+        .site_page_heading{ color: $heading_dark; }
+        .site_paragraph{ color: $text_dark; }
+             
     }
 }
+/* ************ */

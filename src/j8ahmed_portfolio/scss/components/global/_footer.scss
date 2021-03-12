@@ -30,25 +30,27 @@
     font-size: 1.25em;
 }
 .footer_copyright{
-    margin-top: 2rem;
-    color: white;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
     padding: 0.5rem 0;
     text-align: left;
 }
 
-//theme colors
-// body{
-//     &.light{
 
-//     }
-
-//     &.dark{
-        
+// @media( max-width: 340px){
+//     .site_footer_container{
+//         /* padding: 0; */
 //     }
 // }
 
-@media( max-width: 340px){
-    .site_footer_container{
-        /* padding: 0; */
+
+/* THEME COLORS */
+body{
+    &.light{ 
+        .footer_copyright{ color: $text; }
+    }
+    &.dark{  
+        .footer_copyright{ color: $text_dark; }
     }
 }
+/* ************ */

@@ -34,7 +34,6 @@ Home page styles
 }
 .hero_text_intro_container{
     text-align: left;
-    color: $text;
 }
 .hero_text_main_info{
     font-size: 4em;
@@ -42,14 +41,8 @@ Home page styles
 
 .site_accent_text{
     font-weight: bold;
-    color: $quaternary;
-
     a{
         text-decoration: none;
-        color: $quaternary;
-    }
-    &:hover a{
-        color: $link_hover;
     }
 }
 .hero_text_sub_info{
@@ -59,19 +52,13 @@ Home page styles
     font-size: 2em;
     text-align: center;
     font-style: italic;
-    color: $text;
 }
 .text_sub_info_accent{
     a{
         text-decoration: none;
         color: $quaternary;
-
-        &:hover{
-            color: $link_hover;
-        }
     }
 }
-
 
 
 
@@ -116,7 +103,6 @@ Home page styles
     
     .site_accent_text{
         font-weight: bold;
-        color: $quaternary;
     }
     .hero_text_sub_info{
         padding: 2rem 1rem 2rem 0;
@@ -124,3 +110,35 @@ Home page styles
 }
 
 
+/* THEME COLORS */
+body{
+    &.light{ 
+        .hero_text_intro_container{ color: $text; }
+        .hero_text_sub_info{ color: $text; }
+        .site_accent_text{
+            color: $quaternary;
+            a{ color: $quaternary; }
+            &:hover a{ color: $link_hover; }
+        }
+        .text_sub_info_accent{
+            a{
+                &:hover{ color: $link_hover; }
+            }
+        }
+    }
+    &.dark{  
+        .hero_text_intro_container{ color: $text_dark; }
+        .hero_text_sub_info{ color: $text_dark; }
+        .site_accent_text{
+            color: $quaternary;
+            a{ color: $quaternary; }
+            &:hover a{ color: $link_hover_dark; }
+        }
+        .text_sub_info_accent{
+            a{
+                &:hover{ color: $link_hover_dark; }
+            }
+        }
+    }
+}
+/* ************ */

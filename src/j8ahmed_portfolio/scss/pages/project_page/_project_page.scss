@@ -12,7 +12,6 @@ Portfolio Project page styles
 }
 .project_category{
     margin: 2rem 0;
-    color: $text;
     font-size: 2em;
     text-align: left;
 }
@@ -81,7 +80,6 @@ Portfolio Project page styles
 .project_subheading{
     margin-top: 2rem;
     text-align: left;
-    color: $text;
     font-size: 2em;
     font-weight: bold;
 }
@@ -96,6 +94,19 @@ Portfolio Project page styles
     font-size: 0.9em;
 }
 
+
+/* THEME COLORS */
+body{
+    &.light{ 
+        .project_category{ color: $text; }
+        .project_subheading{ color: $text; }
+    }
+    &.dark{  
+        .project_category{ color: $text_dark; }
+        .project_subheading{ color: $text_dark; }
+    }
+}
+/* ************ */
 
 
 @include media_small{
