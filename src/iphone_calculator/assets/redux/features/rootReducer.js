@@ -50,7 +50,8 @@ const calc = (arg1, arg2, op) =>{
   }
   //convert to exponential
   if(Math.abs(result) >= 9999999){
-
+    result = result.toExponential(3)
+    console.log(typeof(result))
   }
   if(result >= 1000) return numToStr(result)
   
