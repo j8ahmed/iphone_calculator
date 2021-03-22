@@ -10,7 +10,7 @@ const Tech_skills = ({change_section, section_links}) => {
                 {
                     name: "React",
                     image: "",
-                    value: 70,
+                    value: 80,
                 },
                 {
                     name: "React Native",

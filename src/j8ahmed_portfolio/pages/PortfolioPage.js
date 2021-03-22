@@ -68,20 +68,19 @@ const Portfolio_page = () => {
         const tl = load_page_anim()
         load_projects_anim(".portfolio_project_item", tl)
         init.current = true
-
-
-        // const newFunction = debounce()
-        // newFunction()
     }, [])
 
     return (
         <main className="site_content_container">
             <div className="portfolio_page_container">
                 <h2 className="site_page_heading">Code Projects</h2>
+
                 <Navigation 
+                    project_list={projects}
                     category_list={category_list}
                     get_filtered_projects={filter_projects}
-                    />
+                />
+
                 {isLoading ? <Loader /> : projects.length <= 0 ?  
                 <div className="no_projects_container">
                     <h3 className="site_page_subheading">Sorry...<br/><br/>No Matching Projects.</h3>
