@@ -1,13 +1,8 @@
 import React from 'react'
 import Button from './Button'
 import { connect } from 'react-redux';
-import { 
-  changeOp,
-  changeArg1,
-  updateInput,
-  updateDisplay, 
-} from '../assets/redux/features/rootReducer'
-const {log} = console
+import { mapStateToProps, mapDispatchToProps } from '../assets/redux/features/rootReducer'
+// const {log} = console
 class NumPad extends React.Component{
   constructor(props){
     super(props);
@@ -16,17 +11,14 @@ class NumPad extends React.Component{
   handleNumPad(input){
     const { 
       max,
-      arg1, 
       display,
       input: prevInput,
-      changeOp,
       updateInput,
       updateDisplay,
     } = this.props
-    let newDisplay;
     
-    log(`PrevInput: ${prevInput}`)
-    log(`CurrInput: ${input}`)
+    // log(`PrevInput: ${prevInput}`)
+    // log(`CurrInput: ${input}`)
 
     //store the operator that was last used
     // if(/[/*+-]/.test(prevInput)){
@@ -34,9 +26,8 @@ class NumPad extends React.Component{
     // }
     switch(true){
       
-      case /[0-9(./)]/.test(prevInput):
-        log("PrevInput is a number/Decimal")
-        if( input === '.' && !/(\.)/.test(display) ){
+      case /[0-9\\.]/.test(prevInput):
+        if( input === '.' && !/\\./.test(display) ){
           updateDisplay(display + input)
           break
         }
@@ -51,24 +42,16 @@ class NumPad extends React.Component{
         updateDisplay(input)
         break
 
-      default:
+      case !prevInput:
+        if(input === '.'){
+          updateDisplay('0.')
+          break
+        }
         updateDisplay(input)
         break
-      
-      // //when display is '0'
-      // case (/^0$/.test(display)):
-      //   input.match(/[.]/) ? newDisplay = '0.' : newDisplay = input;
-      //   break;
 
-      // //when display contains a decimal and user presses decimal button
-      // case (/[.]/.test(display) && input === '.'):
-      //   arg1 === display ? newDisplay = '0.' : newDisplay = display;
-      //   break;
-
-      // //all other cases
-      // default:
-      //   arg1 !== '' && !/[0-9[.]]/.test(prevInput) ? newDisplay = input : newDisplay = display + input;
-      //   break;
+      default:
+        break
     }
     // updateDisplay(newDisplay);
     updateInput(input);
@@ -91,25 +74,6 @@ class NumPad extends React.Component{
         <Button ID='decimal' value='.' style={{gridArea: 'decimal'}} handleClick={handleNumPad}/>
       </div>
     )
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    max: state.max,
-    arg1: state.arg1,
-    arg2: state.arg2,
-    input: state.input,
-    result: state.result,
-    display: state.display,
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changeArg1:     arg1    => dispatch(changeArg1(arg1)),
-    updateInput:    input   => dispatch(updateInput(input)),
-    updateDisplay:  display => dispatch(updateDisplay(display)),
   }
 }
 

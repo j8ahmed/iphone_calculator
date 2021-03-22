@@ -1,34 +1,17 @@
 import React from 'react'
 import Button from './Button'
 import { connect } from 'react-redux';
-import { changeOp, changeArg1, changeArg2, updateInput, updateDisplay, calcUpdate } from '../assets/redux/features/rootReducer'
+import { mapStateToProps, mapDispatchToProps } from '../assets/redux/features/rootReducer'
 import { add, subtract, multiply, divide, equal } from '../assets/images/button_icons/IconTags'
+// const { log } = console
 
-const { log } = console
 class Operators extends React.Component{
     constructor(props){
         super(props);
         this.handleOperators = this.handleOperators.bind(this);
     }
 
-    calc(arg1, arg2, op){
-        switch(op){
-            case "+":
-                return Math.round(1000000 * (parseFloat(arg1) + parseFloat(arg2)) ) / 1000000; 
-            case "-":
-                return Math.round(1000000 * (parseFloat(arg1) - parseFloat(arg2)) ) / 1000000; 
-            case "*":
-                return Math.round(1000000 * (parseFloat(arg1) * parseFloat(arg2)) ) / 1000000; 
-            case "/":
-                return Math.round(1000000 * (parseFloat(arg1) / parseFloat(arg2)) ) / 1000000; 
-            default:
-                return "Error"
-        }
-    }
-
     handleOperators(operator){
-        let result
-        const { calc } = this
         const { 
             op,
             arg1,
@@ -37,13 +20,11 @@ class Operators extends React.Component{
             input: prevInput,
             changeOp,
             changeArg1, 
-            changeArg2,
             updateInput, 
-            updateDisplay,
             calcUpdate,
         } = this.props
-        log(`previousInput: ${prevInput}`)
-        log(`currentInput: ${operator}`)
+        // log(`previousInput: ${prevInput}`)
+        // log(`currentInput: ${operator}`)
         switch(operator){
             case decodeURI('%C3%B7'):
                 operator = "/"
@@ -59,14 +40,13 @@ class Operators extends React.Component{
         
         switch(true){
             //previous input was a number
-            case /[0-9]/.test(prevInput):
+            case /[0-9\\.]/.test(prevInput):
                 if(arg1){
-                    result = calc(arg1, display, op)
                     if(operator === '='){
-                        calcUpdate(result, prevInput, op, result)
+                        calcUpdate(arg1, display, op)
                         break
                     }
-                    calcUpdate(result, prevInput, operator, result)
+                    calcUpdate(arg1, display, op, operator)
                     break
                 }
                 changeOp(operator)
@@ -80,17 +60,16 @@ class Operators extends React.Component{
 
             case /=/.test(prevInput):
                 if(operator === '=' && arg2){
-                    log("Repeat previous calculation")
-                    result = calc(arg1, arg2, op)
-                    calcUpdate(result, arg2, op, result)
+                    calcUpdate(display, arg2, op)
+                    break
                 }
-                else changeOp(operator)
+                changeOp(operator)
                 break
-                        
+            
             //previous input is blank || Tools
             default:
-                console.log('this is the default case for the operator type');
-                break; 
+                changeOp(operator)
+                break
         }
         updateInput(operator)
     }
@@ -107,29 +86,6 @@ class Operators extends React.Component{
           </div>
         )
       }
-}
-
-const mapStateToProps = state => {
-  return {
-    op: state.op,
-    arg1: state.arg1,
-    arg2: state.arg2,
-    input: state.input,
-    result: state.result,
-    display: state.display,
-  }
-}
-
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changeOp:       op      => dispatch(changeOp(op)),
-    changeArg1:     arg1    => dispatch(changeArg1(arg1)),
-    changeArg2:     arg2    => dispatch(changeArg2(arg2)),
-    updateInput:    input   => dispatch(updateInput(input)),
-    updateDisplay:  display => dispatch(updateDisplay(display)),
-    calcUpdate:     (arg1, arg2, op, display) => dispatch(calcUpdate(arg1, arg2, op, display))
-  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Operators)

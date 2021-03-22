@@ -1,10 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import { connect } from 'react-redux';
-import { 
-  reset,
-  updateDisplay, 
-} from '../assets/redux/features/rootReducer'
+import { mapStateToProps, mapDispatchToProps } from '../assets/redux/features/rootReducer'
 
 class Tools extends React.Component{
     constructor(props){
@@ -15,7 +12,8 @@ class Tools extends React.Component{
       const { 
         display,
         reset,
-        updateDisplay, 
+        negativeCalc,
+        percentCalc,
       } = this.props 
       switch(true){
 
@@ -25,11 +23,11 @@ class Tools extends React.Component{
           break;
 
         case (input === '+/-'):
-          updateDisplay(parseFloat(display) * -1);
+          negativeCalc(display);
           break;
 
         case (input === '%'):
-          updateDisplay(parseFloat(display) / 100 );
+          percentCalc(display);
           break;
 
         default:
@@ -48,20 +46,6 @@ class Tools extends React.Component{
       )
     }
 }
-
-const mapStateToProps = state => {
-  return {
-    display: state.display,
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    reset:          ()      => dispatch(reset()),
-    updateDisplay:  display => dispatch(updateDisplay(display)),
-  }
-}
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tools)
