@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import Calculator from './iphone_calculator/index'
 
 
 ReactDOM.render(
 <React.StrictMode>
-  <App/>
+  <Calculator/>
 </React.StrictMode>, 
 document.getElementById('root'));
 
