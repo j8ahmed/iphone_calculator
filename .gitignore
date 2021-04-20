@@ -21,7 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Mini Project temp files (I'm working on them here rather than installing new packages etc... Lazy I know.)
-/src/iphone_calculator/
-/src/shopping_cart/
