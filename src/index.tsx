@@ -8,5 +8,3 @@ ReactDOM.render(
   <Calculator/>
 </React.StrictMode>, 
 document.getElementById('root'));
-
-
