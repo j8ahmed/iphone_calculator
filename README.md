@@ -1,12 +1,17 @@
 # iPhone Calculator React App
 
-Built to mimic the iPhone default Calculator IOS app (currently does not have the scientific calculator features available).
+Built to mimic the iPhone default Calculator IOS app (currently does not have the scientific calculator features available). [Live website](https://j8ahmed-react-redux-iphone-calculator.netlify.app/)
 
 ## To Do:
 
 - Finished adding integration tests
 - Structure and layout plan for adding the Scientific Calculator features to the app.
 - Fix some formatting bugs.
+
+## Known Bugs:
+
+- Formatting of floats to fit within calculator app's screen width.
+    - Example bug production: 5 / 3 = 1.6666666667. Should be: 5/3 = 1.666667
 
 <br/>
 
