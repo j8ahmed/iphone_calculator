@@ -34,7 +34,6 @@ export const calc = (arg1: string, arg2: string, op: string): string =>{
             break
         default:
             return "Error"
-            break
     }
     //convert to exponential with 2 decimal places for large / small numbers   
     if( result.isGreaterThanOrEqualTo(1e7) ){
