@@ -1,6 +1,8 @@
 # iPhone Calculator React App
 
-Built to mimic the iPhone default Calculator IOS app (currently does not have the scientific calculator features available). [Live website](https://j8ahmed-react-redux-iphone-calculator.netlify.app/)
+Built to mimic the iPhone default Calculator IOS app (currently does not have the scientific calculator features available). 
+
+- [Live website](https://projects.j8ahmed.com/iphone-calculator/)
 
 ## To Do:
 
@@ -13,7 +15,19 @@ Built to mimic the iPhone default Calculator IOS app (currently does not have th
 - Formatting of floats to fit within calculator app's screen width.
     - Example bug production: 5 / 3 = 1.6666666667. Should be: 5/3 = 1.666667
 
-<br/>
+## Resolved Bugs:
+
+## `node-sass` Seemed to be Outdated
+
+I was trying to run the app but it repeatedly failed due to the `sass` code not being read correctly by the `node-sass` package. I tried to look for an answer on [Stack Overflow](https://stackoverflow.com/questions/49475492/npm-install-error-code-ebadplatform) but ultimately that solution failed. I then ended up uninstalling `node-sass` from my `dependencies` and installing `sass` in my `devDependencies`. This resolved the issue thankfully. I guess this problem is the result of working with an older project whose dependencies may no longer be fully supported. I need to look into this further when I get some time. 
+
+## Should `.eslintcache` Be in Our `.gitignore`
+
+Seems like the answer is yes based on [this reddit post answer](https://www.reddit.com/r/webdev/comments/kvza92/should_eslintcache_be_in_git/) but I need to look into this a bit more. I lean towards agreeing since it's just a linter.
+
+>Rule of thumb: If you delete it from your source tree, can you regenerate automatically it from the rest of the sources? If you make a fresh checkout on a pristine workstation, can your toolchain generate it for you? If the answer to these is "yes", then it doesn't belong in git.
+
+
 
 ---
 
