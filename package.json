@@ -1,5 +1,6 @@
 {
   "name": "i_phone_calculator",
+  "homepage": "/iphone-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
