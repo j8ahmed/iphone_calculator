@@ -3,6 +3,7 @@
 Built to mimic the iPhone default Calculator IOS app (currently does not have the scientific calculator features available). 
 
 - [Live website](https://projects.j8ahmed.com/iphone-calculator/)
+- [GitHub Repo](https://github.com/j8ahmed/iphone_calculator)
 
 ## To Do:
 
