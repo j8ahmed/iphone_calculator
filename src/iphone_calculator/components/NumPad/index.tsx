@@ -1,8 +1,7 @@
 import { Component } from 'react'
-import Button from './Button'
 import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps, CalculatorState } from '../assets/redux/features/rootReducer'
-// const {log} = console
+import Button from '../Button'
+import { mapStateToProps, mapDispatchToProps, CalculatorState } from '../../assets/redux/features/rootReducer'
 
 interface NumPadProps extends CalculatorState {
   updateInput: any,

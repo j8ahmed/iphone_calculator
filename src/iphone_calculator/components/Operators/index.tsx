@@ -1,9 +1,8 @@
 import { Component } from 'react'
-import Button from './Button'
+import Button from '../Button'
 import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps, CalculatorState } from '../assets/redux/features/rootReducer'
-import { add, subtract, multiply, divide, equal } from '../assets/images/button_icons/IconTags'
-// const { log } = console
+import { mapStateToProps, mapDispatchToProps, CalculatorState } from '../../assets/redux/features/rootReducer'
+import { add, subtract, multiply, divide, equal } from '../../assets/images/button_icons/IconTags'
 
 interface OpProps extends CalculatorState {
     changeOp: any,

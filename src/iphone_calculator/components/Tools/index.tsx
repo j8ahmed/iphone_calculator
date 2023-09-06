@@ -1,7 +1,7 @@
 import { Component } from 'react'
-import Button from './Button'
+import Button from '../Button'
 import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps, CalculatorState } from '../assets/redux/features/rootReducer'
+import { mapStateToProps, mapDispatchToProps, CalculatorState } from "../../assets/redux/features/rootReducer"
 
 interface ToolsProps extends CalculatorState {
   reset: any,

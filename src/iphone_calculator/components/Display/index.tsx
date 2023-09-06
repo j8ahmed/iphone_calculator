@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { connect } from "react-redux";
-import { mapStateToProps } from '../assets/redux/features/rootReducer'
+import { mapStateToProps } from '../../assets/redux/features/rootReducer'
 
 type DisplayProps = {
   display: string,
